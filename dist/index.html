@@ -52,6 +52,23 @@
       transition: transform 0.15s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.15s ease;
     }
 
+    @media (max-width: 767px) {
+      .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+        padding: 0 20px;
+      }
+      .hero-btn-wrap {
+        width: 100%;
+        max-width: 300px;
+      }
+      .hero-btn-wrap .btn {
+        width: 100%;
+        display: block;
+        text-align: center;
+      }
+    }
+
     .btn:active {
       transform: scale(0.95) !important;
       box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15) !important;
@@ -984,11 +1001,11 @@
                 })();
               </script>
             </div>
-            <div class="!flex flex-wrap justify-center" data-cues="slideInDown" data-delay="600">
-              <span><a href="#demos"
-                  class="btn btn-lg btn-grape !text-white !bg-[#605dba] border-[#605dba] hover:text-white hover:bg-[#605dba] hover:!border-[#605dba]   active:text-white active:bg-[#605dba] active:border-[#605dba] disabled:text-white disabled:bg-[#605dba] disabled:border-[#605dba] btn-icon btn-icon-end !rounded-[0.8rem] xl:mx-1 lg:mx-1 md:mx-1 !mb-2 xl:!mb-0 lg:!mb-0 md:!mb-0 scroll">Price Mistakes <i class="uil uil-arrow-down-right before:content-['\e944'] !ml-[0.3rem]"></i></a></span>
-              <span><a href="https://whop.com/bandarsbounties"
-                  class="btn btn-lg btn-fuchsia !text-white !bg-[#e668b3] border-[#e668b3] hover:text-white hover:bg-[#e668b3] hover:!border-[#e668b3]   active:text-white active:bg-[#e668b3] active:border-[#e668b3] disabled:text-white disabled:bg-[#e668b3] disabled:border-[#e668b3] btn-icon btn-icon-end !rounded-[0.8rem] xl:mx-1 lg:mx-1 md:mx-1"
+            <div class="!flex flex-wrap justify-center gap-2 hero-buttons" data-cues="slideInDown" data-delay="600">
+              <span class="hero-btn-wrap"><a href="#demos"
+                  class="btn btn-lg btn-grape !text-white !bg-[#605dba] border-[#605dba] hover:text-white hover:bg-[#605dba] hover:!border-[#605dba]   active:text-white active:bg-[#605dba] active:border-[#605dba] disabled:text-white disabled:bg-[#605dba] disabled:border-[#605dba] btn-icon btn-icon-end !rounded-[0.8rem] scroll">Price Mistakes <i class="uil uil-arrow-down-right before:content-['\e944'] !ml-[0.3rem]"></i></a></span>
+              <span class="hero-btn-wrap"><a href="https://whop.com/bandarsbounties"
+                  class="btn btn-lg btn-fuchsia !text-white !bg-[#e668b3] border-[#e668b3] hover:text-white hover:bg-[#e668b3] hover:!border-[#e668b3]   active:text-white active:bg-[#e668b3] active:border-[#e668b3] disabled:text-white disabled:bg-[#e668b3] disabled:border-[#e668b3] btn-icon btn-icon-end !rounded-[0.8rem]"
                   target="_blank"> Sign Up <i
                     class="uil uil-arrow-up-right !ml-[.3rem] before:content-['\e950']"></i></a></span>
             </div>
