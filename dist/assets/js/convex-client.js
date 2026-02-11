@@ -1,5 +1,5 @@
 import { ConvexHttpClient } from "https://esm.sh/convex@1.31.7/browser";
-import { api } from "https://esm.sh/convex@1.31.7/api";
+import { anyApi as api } from "https://esm.sh/convex@1.31.7/server";
 
 const CONVEX_URL = window.__CONVEX_URL || "https://trustworthy-deer-695.convex.cloud";
 
