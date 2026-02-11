@@ -155,6 +155,45 @@
     .mega-menu-img .dropdown-item:hover .demo-label {
       opacity: 1;
     }
+
+    /* Mobile mega menu: show image grid in offcanvas */
+    @media (max-width: 991.98px) {
+      .dropdown-mega .mega-menu {
+        position: static !important;
+        background: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
+        max-height: 60vh;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .mega-menu-img .mega-menu-content > ul {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 10px;
+        padding: 8px;
+      }
+
+      .mega-menu-img .dropdown-item figure {
+        display: block !important;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+      }
+
+      .mega-menu-img .dropdown-item figure img {
+        width: 100%;
+      }
+
+      .mega-menu-img .dropdown-item .demo-label {
+        display: block !important;
+        opacity: 1 !important;
+      }
+
+      .mega-menu-img .dropdown-item > span:not(.demo-label) {
+        display: none !important;
+      }
+    }
   </style>
 </head>
 
@@ -1001,11 +1040,11 @@
                 })();
               </script>
             </div>
-            <div class="!flex flex-wrap justify-center gap-2 hero-buttons" data-cues="slideInDown" data-delay="600">
+            <div class="!flex flex-wrap justify-center gap-2 hero-buttons">
               <span class="hero-btn-wrap"><a href="#demos"
-                  class="btn btn-lg btn-grape !text-white !bg-[#605dba] border-[#605dba] hover:text-white hover:bg-[#605dba] hover:!border-[#605dba]   active:text-white active:bg-[#605dba] active:border-[#605dba] disabled:text-white disabled:bg-[#605dba] disabled:border-[#605dba] btn-icon btn-icon-end !rounded-[0.8rem] scroll">Price Mistakes <i class="uil uil-arrow-down-right before:content-['\e944'] !ml-[0.3rem]"></i></a></span>
+                  class="btn btn-grape !text-white !bg-[#605dba] border-[#605dba] hover:text-white hover:bg-[#605dba] hover:!border-[#605dba]   active:text-white active:bg-[#605dba] active:border-[#605dba] disabled:text-white disabled:bg-[#605dba] disabled:border-[#605dba] btn-icon btn-icon-end !rounded-[0.8rem] scroll">Price Mistakes <i class="uil uil-arrow-down-right before:content-['\e944'] !ml-[0.3rem]"></i></a></span>
               <span class="hero-btn-wrap"><a href="https://whop.com/bandarsbounties"
-                  class="btn btn-lg btn-fuchsia !text-white !bg-[#e668b3] border-[#e668b3] hover:text-white hover:bg-[#e668b3] hover:!border-[#e668b3]   active:text-white active:bg-[#e668b3] active:border-[#e668b3] disabled:text-white disabled:bg-[#e668b3] disabled:border-[#e668b3] btn-icon btn-icon-end !rounded-[0.8rem]"
+                  class="btn btn-fuchsia !text-white !bg-[#e668b3] border-[#e668b3] hover:text-white hover:bg-[#e668b3] hover:!border-[#e668b3]   active:text-white active:bg-[#e668b3] active:border-[#e668b3] disabled:text-white disabled:bg-[#e668b3] disabled:border-[#e668b3] btn-icon btn-icon-end !rounded-[0.8rem]"
                   target="_blank"> Sign Up <i
                     class="uil uil-arrow-up-right !ml-[.3rem] before:content-['\e950']"></i></a></span>
             </div>
