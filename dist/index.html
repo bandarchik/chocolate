@@ -57,6 +57,62 @@
       box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15) !important;
     }
 
+    .retailer-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 80px;
+      padding: 12px 16px;
+      border-radius: 12px;
+      background: white;
+      transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    }
+    .retailer-icon img {
+      max-height: 44px;
+      width: auto;
+      max-width: 100%;
+      filter: grayscale(100%) opacity(0.55);
+      transition: filter 0.35s ease;
+    }
+    .retailer-icon:hover {
+      background: linear-gradient(135deg, #a78bfa 0%, #ec4899 50%, #f59e0b 100%);
+      transform: translateY(-4px) scale(1.05);
+      box-shadow: 0 8px 25px rgba(167, 139, 250, 0.35);
+    }
+    .retailer-icon:hover img {
+      filter: grayscale(0%) opacity(1) brightness(0) invert(1);
+    }
+    .retailer-name {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #60697b;
+      margin-top: 10px;
+      margin-bottom: 0;
+      transition: color 0.3s ease;
+    }
+    .retailer-card:hover .retailer-name {
+      color: #343f52;
+    }
+
+    .testimonial-card {
+      perspective: 800px;
+    }
+    .testimonial-card .card {
+      transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.5s ease;
+      transform-style: preserve-3d;
+    }
+    .testimonial-card:nth-child(odd) .card {
+      transform: rotateY(-4deg) rotateX(2deg);
+    }
+    .testimonial-card:nth-child(even) .card {
+      transform: rotateY(4deg) rotateX(-2deg);
+    }
+    .testimonial-card:hover .card {
+      transform: rotateY(0deg) rotateX(0deg) scale(1.03);
+      box-shadow: 0 20px 40px rgba(96, 93, 186, 0.15);
+    }
+
     .mega-menu-img .dropdown-item figure {
       position: relative;
     }
@@ -435,7 +491,7 @@
                 </li>
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle !text-[.85rem] !tracking-[normal] hover:!text-[#605dba] after:!text-[#605dba]"
-                    href="#" data-bs-toggle="dropdown">Pages</a>
+                    href="#" data-bs-toggle="dropdown">Top Stories</a>
                   <ul class="dropdown-menu">
                     <li class="dropdown dropdown-submenu dropend"><a
                         class="dropdown-item hover:!text-[#605dba] dropdown-toggle" href="#"
@@ -585,7 +641,7 @@
                 </li>
                 <li class="nav-item dropdown dropdown-mega">
                   <a class="nav-link dropdown-toggle !text-[.85rem] !tracking-[normal] hover:!text-[#605dba] after:!text-[#605dba]"
-                    href="#" data-bs-toggle="dropdown">Blocks</a>
+                    href="#" data-bs-toggle="dropdown">Sitelist</a>
                   <ul class="dropdown-menu mega-menu mega-menu-dark mega-menu-img">
                     <li class="mega-menu-content">
                       <ul
@@ -1248,15 +1304,15 @@
                 </svg>
               </div>
               <h3 class="!text-[0.85rem] !tracking-[0.02rem] uppercase !text-[#aab0bc] !mb-4">CHECK OUT THE GLITCHES TOO</h3>
-              <a href="#prev-demos"
-                class="btn btn-lg btn-grape !text-white !bg-[#605dba] border-[#605dba] hover:text-white hover:bg-[#605dba] hover:!border-[#605dba]   active:text-white active:bg-[#605dba] active:border-[#605dba] disabled:text-white disabled:bg-[#605dba] disabled:border-[#605dba] btn-icon btn-icon-end !rounded-[0.8rem] mx-1 scroll">See Glitches <i class="uil uil-arrow-down-right before:content-['\e944'] !ml-[0.3rem]"></i></a>
+              <a href="javascript:void(0)" onclick="document.getElementById('glitches-section').scrollIntoView({behavior:'smooth',block:'start'})"
+                class="btn btn-lg btn-grape !text-white !bg-[#605dba] border-[#605dba] hover:text-white hover:bg-[#605dba] hover:!border-[#605dba]   active:text-white active:bg-[#605dba] active:border-[#605dba] disabled:text-white disabled:bg-[#605dba] disabled:border-[#605dba] btn-icon btn-icon-end !rounded-[0.8rem] mx-1">See Glitches <i class="uil uil-arrow-down-right before:content-['\e944'] !ml-[0.3rem]"></i></a>
             </div>
             <!-- /column -->
           </div>
           <!-- /.row -->
           <h2
-            class="!text-[0.85rem] !tracking-[.02rem] !leading-[1.35] uppercase !text-[#aab0bc] pt-24 !mt-[-2rem] !mb-6"
-            id="prev-demos">Glitches</h2>
+            class="!text-[0.85rem] !tracking-[.02rem] !leading-[1.35] uppercase !text-[#aab0bc] pt-10 !mb-6"
+            id="glitches-section">Glitches</h2>
           <div class="flex flex-wrap mx-[-15px] !mb-10 xl:mx-[-20px] lg:mx-[-20px] md:mx-[-20px] !mt-[-70px]">
             <div
               class="md:w-6/12 lg:w-4/12 xl:w-4/12 w-full flex-[0_0_auto] !px-[15px] max-w-full xl:!px-[20px] lg:!px-[20px] md:!px-[20px] !mt-[70px]">
@@ -1419,7 +1475,7 @@
           <div class="md:w-11/12 lg:w-10/12 xl:w-8/12 w-full xxl:w-7/12 flex-[0_0_auto] !px-[15px] max-w-full !mx-auto">
             <h2
               class="!text-[calc(1.345rem_+_1.14vw)] font-bold !leading-[1.2] xl:!text-[2.2rem] !mt-3 !mb-3 lg:!px-10 xl:!px-0">
-              Save your time and money by choosing Sandbox for your website.</h2>
+              Save your time & effort by choosing Bandars Bounties</h2>
           </div>
           <!-- /column -->
         </div>
@@ -1730,78 +1786,52 @@
       </div>
       <!-- /.container -->
       <div class="container pb-6 xl:pb-8 lg:pb-8 md:pb-8">
+        <div class="text-center !mb-10">
+          <h1 class="font-semibold !leading-[1.15] xl:!text-[3.2rem] !text-[calc(1.445rem_+_2.34vw)] !mb-5">Relentlessly tracking<br>every movement.</h1>
+          <p class="lead !text-[1.2rem] !leading-[1.6] text-[#60697b] max-w-[600px] mx-auto">We monitor over 1,000+ retailers for price drops, ensuring our members are instantly alerted to mistakes during product changes or listings. Always first, never second.</p>
+        </div>
         <div
-          class="flex flex-wrap mx-[-15px] row-cols-2 row-cols-md-4 row-cols-lg-5 xl:mx-[-20px] lg:mx-[-20px] md:mx-[-20px] !mt-[-50px] !text-center justify-center pb-24 xl:pb-32 lg:pb-32 md:pb-32">
-          <div
-            class="col xl:w-1/5 lg:w-1/5 md:w-3/12 w-6/12 flex-[0_0_auto] max-w-full !px-[15px] xl:!px-[20px] lg:!px-[20px] md:!px-[20px] !mt-[50px]">
-            <img class="!mb-4 m-[0_auto]" src="./assets/img/demos/fi1.png" srcset="./assets/img/demos/fi1@2x.png 2x"
-              alt="image">
-            <h4>Built with <br> love </h4>
+          class="flex flex-wrap mx-[-15px] row-cols-2 row-cols-md-4 row-cols-lg-5 xl:mx-[-20px] lg:mx-[-20px] md:mx-[-20px] !mt-[-30px] !text-center justify-center pb-24 xl:pb-32 lg:pb-32 md:pb-32">
+          <div class="retailer-card col xl:w-1/5 lg:w-1/5 md:w-3/12 w-6/12 flex-[0_0_auto] max-w-full !px-[15px] xl:!px-[20px] lg:!px-[20px] md:!px-[20px] !mt-[30px]">
+            <div class="retailer-icon"><img src="./assets/img/retailers/amazon.svg" alt="Amazon"></div>
+            <h4 class="retailer-name">Amazon</h4>
           </div>
-          <!--/column -->
-          <div
-            class="col xl:w-1/5 lg:w-1/5 md:w-3/12 w-6/12 flex-[0_0_auto] max-w-full !px-[15px] xl:!px-[20px] lg:!px-[20px] md:!px-[20px] !mt-[50px]">
-            <img class="!mb-4 m-[0_auto]" src="./assets/img/demos/fi2.png" srcset="./assets/img/demos/fi2@2x.png 2x"
-              alt="image">
-            <h4>SEO-friendly <br> Coding</h4>
+          <div class="retailer-card col xl:w-1/5 lg:w-1/5 md:w-3/12 w-6/12 flex-[0_0_auto] max-w-full !px-[15px] xl:!px-[20px] lg:!px-[20px] md:!px-[20px] !mt-[30px]">
+            <div class="retailer-icon"><img src="./assets/img/retailers/bestbuy.svg" alt="Best Buy"></div>
+            <h4 class="retailer-name">Best Buy</h4>
           </div>
-          <!--/column -->
-          <div
-            class="col xl:w-1/5 lg:w-1/5 md:w-3/12 w-6/12 flex-[0_0_auto] max-w-full !px-[15px] xl:!px-[20px] lg:!px-[20px] md:!px-[20px] !mt-[50px]">
-            <img class="!mb-4 m-[0_auto]" src="./assets/img/demos/fi3.png" srcset="./assets/img/demos/fi3@2x.png 2x"
-              alt="image">
-            <h4>Valid W3C <br> HTML5 & CSS3</h4>
+          <div class="retailer-card col xl:w-1/5 lg:w-1/5 md:w-3/12 w-6/12 flex-[0_0_auto] max-w-full !px-[15px] xl:!px-[20px] lg:!px-[20px] md:!px-[20px] !mt-[30px]">
+            <div class="retailer-icon"><img src="./assets/img/retailers/costco.svg" alt="Costco"></div>
+            <h4 class="retailer-name">Costco</h4>
           </div>
-          <!--/column -->
-          <div
-            class="col xl:w-1/5 lg:w-1/5 md:w-3/12 w-6/12 flex-[0_0_auto] max-w-full !px-[15px] xl:!px-[20px] lg:!px-[20px] md:!px-[20px] !mt-[50px]">
-            <img class="!mb-4 m-[0_auto]" src="./assets/img/demos/fi4.png" srcset="./assets/img/demos/fi4@2x.png 2x"
-              alt="image">
-            <h4>Retina-ready <br> Graphics</h4>
+          <div class="retailer-card col xl:w-1/5 lg:w-1/5 md:w-3/12 w-6/12 flex-[0_0_auto] max-w-full !px-[15px] xl:!px-[20px] lg:!px-[20px] md:!px-[20px] !mt-[30px]">
+            <div class="retailer-icon"><img src="./assets/img/retailers/hewlettpackard.svg" alt="HP"></div>
+            <h4 class="retailer-name">HP</h4>
           </div>
-          <!--/column -->
-          <div
-            class="col xl:w-1/5 lg:w-1/5 md:w-3/12 w-6/12 flex-[0_0_auto] max-w-full !px-[15px] xl:!px-[20px] lg:!px-[20px] md:!px-[20px] !mt-[50px]">
-            <img class="!mb-4 m-[0_auto]" src="./assets/img/demos/fi5.png" srcset="./assets/img/demos/fi5@2x.png 2x"
-              alt="image">
-            <h4>One-page <br> Layout Option</h4>
+          <div class="retailer-card col xl:w-1/5 lg:w-1/5 md:w-3/12 w-6/12 flex-[0_0_auto] max-w-full !px-[15px] xl:!px-[20px] lg:!px-[20px] md:!px-[20px] !mt-[30px]">
+            <div class="retailer-icon"><img src="./assets/img/retailers/homedepot.svg" alt="Home Depot"></div>
+            <h4 class="retailer-name">Home Depot</h4>
           </div>
-          <!--/column -->
-          <div
-            class="col xl:w-1/5 lg:w-1/5 md:w-3/12 w-6/12 flex-[0_0_auto] max-w-full !px-[15px] xl:!px-[20px] lg:!px-[20px] md:!px-[20px] !mt-[50px]">
-            <img class="!mb-4 m-[0_auto]" src="./assets/img/demos/fi6.png" srcset="./assets/img/demos/fi6@2x.png 2x"
-              alt="image">
-            <h4>Isotope <br> Filterable Gallery</h4>
+          <div class="retailer-card col xl:w-1/5 lg:w-1/5 md:w-3/12 w-6/12 flex-[0_0_auto] max-w-full !px-[15px] xl:!px-[20px] lg:!px-[20px] md:!px-[20px] !mt-[30px]">
+            <div class="retailer-icon"><img src="./assets/img/retailers/lowes.svg" alt="Lowes"></div>
+            <h4 class="retailer-name">Lowe's</h4>
           </div>
-          <!--/column -->
-          <div
-            class="col xl:w-1/5 lg:w-1/5 md:w-3/12 w-6/12 flex-[0_0_auto] max-w-full !px-[15px] xl:!px-[20px] lg:!px-[20px] md:!px-[20px] !mt-[50px]">
-            <img class="!mb-4 m-[0_auto]" src="./assets/img/demos/fi7.png" srcset="./assets/img/demos/fi7@2x.png 2x"
-              alt="image">
-            <h4>Mailchimp <br> Compatible </h4>
+          <div class="retailer-card col xl:w-1/5 lg:w-1/5 md:w-3/12 w-6/12 flex-[0_0_auto] max-w-full !px-[15px] xl:!px-[20px] lg:!px-[20px] md:!px-[20px] !mt-[30px]">
+            <div class="retailer-icon"><img src="./assets/img/retailers/petco.svg" alt="Petco"></div>
+            <h4 class="retailer-name">Petco</h4>
           </div>
-          <!--/column -->
-          <div
-            class="col xl:w-1/5 lg:w-1/5 md:w-3/12 w-6/12 flex-[0_0_auto] max-w-full !px-[15px] xl:!px-[20px] lg:!px-[20px] md:!px-[20px] !mt-[50px]">
-            <img class="!mb-4 m-[0_auto]" src="./assets/img/demos/fi8.png" srcset="./assets/img/demos/fi8@2x.png 2x"
-              alt="image">
-            <h4>Contact Form <br> w/o Page Refresh</h4>
+          <div class="retailer-card col xl:w-1/5 lg:w-1/5 md:w-3/12 w-6/12 flex-[0_0_auto] max-w-full !px-[15px] xl:!px-[20px] lg:!px-[20px] md:!px-[20px] !mt-[30px]">
+            <div class="retailer-icon"><img src="./assets/img/retailers/samsclub.svg" alt="Sams Club"></div>
+            <h4 class="retailer-name">Sam's Club</h4>
           </div>
-          <!--/column -->
-          <div
-            class="col xl:w-1/5 lg:w-1/5 md:w-3/12 w-6/12 flex-[0_0_auto] max-w-full !px-[15px] xl:!px-[20px] lg:!px-[20px] md:!px-[20px] !mt-[50px]">
-            <img class="!mb-4 m-[0_auto]" src="./assets/img/demos/fi9.png" srcset="./assets/img/demos/fi9@2x.png 2x"
-              alt="image">
-            <h4>Animations <br> on Page Scroll</h4>
+          <div class="retailer-card col xl:w-1/5 lg:w-1/5 md:w-3/12 w-6/12 flex-[0_0_auto] max-w-full !px-[15px] xl:!px-[20px] lg:!px-[20px] md:!px-[20px] !mt-[30px]">
+            <div class="retailer-icon"><img src="./assets/img/retailers/target.svg" alt="Target"></div>
+            <h4 class="retailer-name">Target</h4>
           </div>
-          <!--/column -->
-          <div
-            class="col xl:w-1/5 lg:w-1/5 md:w-3/12 w-6/12 flex-[0_0_auto] max-w-full !px-[15px] xl:!px-[20px] lg:!px-[20px] md:!px-[20px] !mt-[50px]">
-            <img class="!mb-4 m-[0_auto]" src="./assets/img/demos/fi10.png" srcset="./assets/img/demos/fi10@2x.png 2x"
-              alt="image">
-            <h4>Top-Notch Support <br> & Free Updates</h4>
+          <div class="retailer-card col xl:w-1/5 lg:w-1/5 md:w-3/12 w-6/12 flex-[0_0_auto] max-w-full !px-[15px] xl:!px-[20px] lg:!px-[20px] md:!px-[20px] !mt-[30px]">
+            <div class="retailer-icon"><img src="./assets/img/retailers/walmart.svg" alt="Walmart"></div>
+            <h4 class="retailer-name">Walmart</h4>
           </div>
-          <!--/column -->
         </div>
         <!--/.row -->
         <div class="flex flex-wrap mx-[-15px] xl:mx-[-35px] lg:mx-[-20px] !mt-[-50px] items-center">
@@ -1812,16 +1842,17 @@
                 class="w-full" src="./assets/img/photos/blurry.png" alt="image"></div>
             <div class="flex flex-wrap mx-[-15px] xl:mx-[-12.5px] lg:mx-[-12.5px] md:mx-[-12.5px] !mt-[-25px]">
               <div
-                class="md:w-6/12 lg:w-6/12 xl:w-5/12 w-full flex-[0_0_auto] !px-[15px] max-w-full !self-end xl:!px-[12.5px] lg:!px-[12.5px] md:!px-[12.5px] !mt-[25px]">
+                class="testimonial-card md:w-6/12 lg:w-6/12 xl:w-5/12 w-full flex-[0_0_auto] !px-[15px] max-w-full !self-end xl:!px-[12.5px] lg:!px-[12.5px] md:!px-[12.5px] !mt-[25px]">
                 <div
                   class="card !shadow-[rgba(30,34,40,0.02)_0_2px_1px,rgba(30,34,40,0.02)_0_4px_2px,rgba(30,34,40,0.02)_0_8px_4px,rgba(30,34,40,0.02)_0_16px_8px,rgba(30,34,40,0.03)_0_32px_16px] !rounded-[0.8rem]">
                   <div class="card-body flex-[1_1_auto] p-[40px]">
                     <blockquote
                       class="!text-[0.85rem] !leading-[1.7] !font-normal !pl-4 icon !mb-0 m-[0_0_1rem] relative p-0 border-0 before:content-['\201d'] before:absolute before:top-[-1.5rem] before:left-[-0.9rem] before:text-[rgba(52,63,82,0.05)] before:text-[10rem] before:leading-none before:z-[1]">
-                      <p>“Sandbox is really attractive and it saves my time. The support team is really amazing.”</p>
+                      <p>"Bandar has helped me legit make over 7k in 2 months. Great price errors, Bandar pings them first. I don't know how but they do it and "it's the timing we pay for" so I would recommend it."</p>
                       <div class="flex items-center text-left">
+                        <img src="./assets/img/photos/vlne.png" alt="vlone" style="width:40px;height:40px;border-radius:50%;margin-right:10px;object-fit:cover;">
                         <div class="info p-0">
-                          <h5 class="!mb-0">stevenstrange</h5>
+                          <h5 class="!mb-0">vlone</h5>
                         </div>
                       </div>
                     </blockquote>
@@ -1832,17 +1863,17 @@
               </div>
               <!--/column -->
               <div
-                class="xl:w-6/12 lg:w-6/12 md:w-6/12 w-full flex-[0_0_auto] !px-[15px] max-w-full !self-end xl:!px-[12.5px] lg:!px-[12.5px] md:!px-[12.5px] !mt-[25px]">
+                class="testimonial-card xl:w-6/12 lg:w-6/12 md:w-6/12 w-full flex-[0_0_auto] !px-[15px] max-w-full !self-end xl:!px-[12.5px] lg:!px-[12.5px] md:!px-[12.5px] !mt-[25px]">
                 <div
                   class="card !shadow-[rgba(30,34,40,0.02)_0_2px_1px,rgba(30,34,40,0.02)_0_4px_2px,rgba(30,34,40,0.02)_0_8px_4px,rgba(30,34,40,0.02)_0_16px_8px,rgba(30,34,40,0.03)_0_32px_16px] !rounded-[0.8rem]">
                   <div class="card-body flex-[1_1_auto] p-[40px]">
                     <blockquote
                       class="!text-[0.85rem] !leading-[1.7] !font-normal !pl-4 icon !mb-0 m-[0_0_1rem] relative p-0 border-0 before:content-['\201d'] before:absolute before:top-[-1.5rem] before:left-[-0.9rem] before:text-[rgba(52,63,82,0.05)] before:text-[10rem] before:leading-none before:z-[1]">
-                      <p>“This is just next level stuff in terms of quality, docs and features. I don't think I'm going
-                        to need or tolerate any other template from now on.”</p>
+                      <p>"Been in this group for many years and I would never leave. BB posts first, and others try to leech when it's too late. I leave notifications on and make money off a few clicks. I couldn't think of an easier way to make money on the side."</p>
                       <div class="flex items-center text-left">
+                        <img src="./assets/img/photos/ajaysmind.png" alt="ajaysmind" style="width:40px;height:40px;border-radius:50%;margin-right:10px;object-fit:cover;">
                         <div class="info p-0">
-                          <h5 class="!mb-0">70656e6973</h5>
+                          <h5 class="!mb-0">ajaysmind</h5>
                         </div>
                       </div>
                     </blockquote>
@@ -1853,17 +1884,18 @@
               </div>
               <!--/column -->
               <div
-                class="md:w-6/12 lg:w-6/12 xl:w-5/12 flex-[0_0_auto] !px-[15px] max-w-full xl:!ml-[8.33333333%] xl:!px-[12.5px] lg:!px-[12.5px] md:!px-[12.5px] !mt-[25px]">
+                class="testimonial-card md:w-6/12 lg:w-6/12 xl:w-5/12 flex-[0_0_auto] !px-[15px] max-w-full xl:!ml-[8.33333333%] xl:!px-[12.5px] lg:!px-[12.5px] md:!px-[12.5px] !mt-[25px]">
                 <div
                   class="card !shadow-[rgba(30,34,40,0.02)_0_2px_1px,rgba(30,34,40,0.02)_0_4px_2px,rgba(30,34,40,0.02)_0_8px_4px,rgba(30,34,40,0.02)_0_16px_8px,rgba(30,34,40,0.03)_0_32px_16px] !rounded-[0.8rem]">
                   <div class="card-body flex-[1_1_auto] p-[40px]">
                     <blockquote
                       class="!text-[0.85rem] !leading-[1.7] !font-normal !pl-4 icon !mb-0 m-[0_0_1rem] relative p-0 border-0 before:content-['\201d'] before:absolute before:top-[-1.5rem] before:left-[-0.9rem] before:text-[rgba(52,63,82,0.05)] before:text-[10rem] before:leading-none before:z-[1]">
-                      <p>“I've been a Themeforest user for almost 10 years and I have purchased well over 100 themes
-                        during my time. This theme is amongst the best here.”</p>
+                      <p>"I've been a Bandar's Bounties user for almost 5 years and I have purchased well over 50 price errors
+                        during my time. This group is amongst the best out there because they are super fast."</p>
                       <div class="flex items-center text-left">
+                        <img src="./assets/img/photos/faltify.png" alt="Faltify" style="width:40px;height:40px;border-radius:50%;margin-right:10px;object-fit:cover;">
                         <div class="info p-0">
-                          <h5 class="!mb-0">bmwe92m3</h5>
+                          <h5 class="!mb-0">Faltify</h5>
                         </div>
                       </div>
                     </blockquote>
@@ -1874,17 +1906,17 @@
               </div>
               <!--/column -->
               <div
-                class="xl:w-6/12 lg:w-6/12 md:w-6/12 w-full flex-[0_0_auto] !px-[15px] max-w-full !self-start xl:!px-[12.5px] lg:!px-[12.5px] md:!px-[12.5px] !mt-[25px]">
+                class="testimonial-card xl:w-6/12 lg:w-6/12 md:w-6/12 w-full flex-[0_0_auto] !px-[15px] max-w-full !self-start xl:!px-[12.5px] lg:!px-[12.5px] md:!px-[12.5px] !mt-[25px]">
                 <div
                   class="card !shadow-[rgba(30,34,40,0.02)_0_2px_1px,rgba(30,34,40,0.02)_0_4px_2px,rgba(30,34,40,0.02)_0_8px_4px,rgba(30,34,40,0.02)_0_16px_8px,rgba(30,34,40,0.03)_0_32px_16px] !rounded-[0.8rem]">
                   <div class="card-body flex-[1_1_auto] p-[40px]">
                     <blockquote
                       class="!text-[0.85rem] !leading-[1.7] !font-normal !pl-4 icon !mb-0 m-[0_0_1rem] relative p-0 border-0 before:content-['\201d'] before:absolute before:top-[-1.5rem] before:left-[-0.9rem] before:text-[rgba(52,63,82,0.05)] before:text-[10rem] before:leading-none before:z-[1]">
-                      <p>“Simply the best templates that I have bought so far. Super clean code, intuitive
-                        documentations, and most important of all the best design.”</p>
+                      <p>"Best product/service I've ever purchased. I'm a college student so I can't be as involved as I would like to be buy I have had crazy deals for both personal use and resale use. Worth every penny and more."</p>
                       <div class="flex items-center text-left">
+                        <img src="./assets/img/photos/hibbster32.png" alt="hibbster32" style="width:40px;height:40px;border-radius:50%;margin-right:10px;object-fit:cover;">
                         <div class="info p-0">
-                          <h5 class="!mb-0">oziuji</h5>
+                          <h5 class="!mb-0">hibbster32</h5>
                         </div>
                       </div>
                     </blockquote>
@@ -1902,12 +1934,16 @@
             class="xl:w-4/12 lg:w-4/12 w-full flex-[0_0_auto] xl:!px-[35px] lg:!px-[20px] !px-[15px] !mt-[50px] max-w-full">
             <h2
               class="!text-[calc(1.345rem_+_1.14vw)] font-bold !leading-[1.2] xl:!text-[2.2rem] !mb-4  xl:!mt-[-1.5rem] lg:!mt-[-1.5rem]">
-              Our top priority is ensuring customer satisfaction.</h2>
-            <p class="lead !text-[1.1rem] !leading-[1.6] !mb-6">Don't take our word for it. Hear from customers about
-              Sandbox.</p>
-            <a href="https://whop.com/bandarsbounties"
+              Speed is our #1 priority to ensure customer satisfaction.</h2>
+            <p class="lead !text-[1.1rem] !leading-[1.6] !mb-6">Don't take our word for it. Hear directly our members about
+              us.</p>
+            <a href="https://whop.com/bandarsbounties/bandarsbounties"
               class="btn btn-lg btn-grape !text-white !bg-[#605dba] border-[#605dba] hover:text-white hover:bg-[#605dba] hover:!border-[#605dba]   active:text-white active:bg-[#605dba] active:border-[#605dba] disabled:text-white disabled:bg-[#605dba] disabled:border-[#605dba] btn-icon btn-icon-end !rounded-[0.8rem]"
               target="_blank">All Reviews <i
+                class="uil uil-arrow-up-right !ml-[.3rem] before:content-['\e950']"></i></a>
+            <a href="https://whop.com/bandarsbounties/"
+              class="btn btn-lg btn-grape !text-white !bg-[#e668b3] border-[#e668b3] hover:text-white hover:!bg-[#d4559f] hover:!border-[#d4559f] active:text-white active:!bg-[#d4559f] active:!border-[#d4559f] btn-icon btn-icon-end !rounded-[0.8rem] !ml-3"
+              target="_blank">Join <i
                 class="uil uil-arrow-up-right !ml-[.3rem] before:content-['\e950']"></i></a>
           </div>
           <!--/column -->
