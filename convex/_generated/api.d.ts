@@ -10,7 +10,12 @@
 
 import type * as articles from "../articles.js";
 import type * as auth from "../auth.js";
+import type * as comments from "../comments.js";
+import type * as follows from "../follows.js";
+import type * as notifications from "../notifications.js";
+import type * as scoring from "../scoring.js";
 import type * as seed from "../seed.js";
+import type * as votes from "../votes.js";
 
 import type {
   ApiFromModules,
@@ -21,7 +26,12 @@ import type {
 declare const fullApi: ApiFromModules<{
   articles: typeof articles;
   auth: typeof auth;
+  comments: typeof comments;
+  follows: typeof follows;
+  notifications: typeof notifications;
+  scoring: typeof scoring;
   seed: typeof seed;
+  votes: typeof votes;
 }>;
 
 /**

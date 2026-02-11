@@ -370,6 +370,7 @@
           </div>
           <div class="navbar-other w-full flex !ml-auto">
             <ul class="navbar-nav !flex-row items-center !ml-auto">
+              <li class="nav-item" id="auth-nav-slot"></li>
               <li class="nav-item hidden xl:block lg:block md:block">
                 <a href="https://whop.com/bandarsbounties"
                   class="btn btn-grape !text-white !bg-[#605dba] border-[#605dba] hover:text-white hover:bg-[#605dba] hover:!border-[#605dba] active:text-white active:bg-[#605dba] active:border-[#605dba] disabled:text-white disabled:bg-[#605dba] disabled:border-[#605dba] !rounded-[0.8rem]"
@@ -442,5 +443,19 @@
   <script src="../assets/js/plugins.js"></script>
   <script src="../assets/js/theme.js"></script>
   <script type="module" src="../assets/js/blog-renderer.js"></script>
+  <script type="module">
+    import { initAuthUI } from "../assets/js/user-auth-ui.js";
+    import { initNotificationBell } from "../assets/js/notification-panel.js";
+
+    async function initCommunity() {
+      await initAuthUI();
+      await initNotificationBell();
+    }
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", initCommunity);
+    } else {
+      initCommunity();
+    }
+  </script>
 </body>
 </html>

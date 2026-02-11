@@ -4,6 +4,9 @@
   "rewrites": [
     { "source": "/blog", "destination": "/blog/index.html" },
     { "source": "/blog/:slug", "destination": "/blog/article.html" },
-    { "source": "/admin", "destination": "/admin/index.html" }
+    { "source": "/admin", "destination": "/admin/index.html" },
+    { "source": "/user/:username", "destination": "/user/profile.html" },
+    { "source": "/login", "destination": "/auth/login.html" },
+    { "source": "/register", "destination": "/auth/register.html" }
   ]
 }

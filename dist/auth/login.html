@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign In - Bandar's Bounties</title>
+  <link rel="shortcut icon" href="../assets/img/favicon.png">
+  <link rel="stylesheet" href="../assets/css/plugins.css">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../assets/css/colors/grape.css">
+  <style>
+    .auth-page { min-height: 100vh; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #1a1c2e 0%, #2d1b69 100%); padding: 20px; }
+    .auth-card { background: #fff; border-radius: 16px; padding: 40px; width: 100%; max-width: 420px; box-shadow: 0 20px 60px rgba(0,0,0,.2); }
+    .auth-title { font-size: 1.5rem; font-weight: 700; color: #343f52; margin-bottom: 8px; }
+    .auth-subtitle { color: #959ca9; font-size: .9rem; margin-bottom: 28px; }
+    .auth-input { width: 100%; padding: 12px 16px; border: 2px solid #e0e0e8; border-radius: 10px; font-size: .9rem; margin-bottom: 14px; transition: border-color .2s; font-family: inherit; box-sizing: border-box; }
+    .auth-input:focus { outline: none; border-color: #605dba; }
+    .auth-btn { width: 100%; padding: 12px; background: #605dba; color: #fff; border: none; border-radius: 10px; font-size: 1rem; font-weight: 700; cursor: pointer; transition: background .2s; }
+    .auth-btn:hover { background: #4e4ba0; }
+    .auth-btn:disabled { opacity: .6; cursor: not-allowed; }
+    .auth-error { background: #fff0f0; color: #cc0000; padding: 10px 14px; border-radius: 8px; font-size: .85rem; margin-bottom: 14px; display: none; }
+    .auth-footer { text-align: center; margin-top: 20px; font-size: .85rem; color: #959ca9; }
+    .auth-footer a { color: #605dba; font-weight: 600; text-decoration: none; }
+  </style>
+</head>
+<body>
+  <div class="auth-page">
+    <div class="auth-card">
+      <div style="text-align:center;margin-bottom:24px;">
+        <a href="/" style="display:inline-block;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="180" height="16" viewBox="0 0 235.108 20">
+            <g transform="translate(-15 -20)">
+              <path d="M-15.421,49.732l.8-.354V43.346l-2.736-3.5H-30.884v20c.08,0,.16,0,.239,0q6.666,0,13.332,0a.638.638,0,0,0,.467-.18c.28-.254.58-.484.87-.726s.577-.488.866-.732.558-.466.837-.7l.388-.325V51.637Zm-5.292,5.878-.023.024a.037.037,0,0,1-.018.011,1.192,1.192,0,0,1-.129.011l-3.671-.006c-.013,0-.025-.012-.038-.019-.035-.16-.047-3.6-.014-3.9l.016-.015a.044.044,0,0,1,.018-.011c.043,0,.086-.01.129-.01l3.671.005c.013,0,.025.011.058.026Zm.006-8.158a.357.357,0,0,1-.028.029c-.005,0-.012.012-.017.012l-3.757.006a.77.77,0,0,1-.1-.014V44.066c.166-.039,3.545-.052,3.892-.015.023.565.007,1.133.01,1.7S-20.707,46.895-20.707,47.453Z" transform="translate(45.884 -19.842)" fill="#343f52"/>
+              <path d="M8.942-11.323a5.641,5.641,0,0,1,3.126.919A6.383,6.383,0,0,1,14.3-7.9a7.51,7.51,0,0,1,.813,3.477A7.55,7.55,0,0,1,14.3-.94a6.421,6.421,0,0,1-2.234,2.518A5.612,5.612,0,0,1,8.942,2.5,5.48,5.48,0,0,1,6.6,1.995,3.474,3.474,0,0,1,5.016.666V2.24H1.2V-16.716h3.82v7.231A3.474,3.474,0,0,1,6.6-10.814,5.48,5.48,0,0,1,8.942-11.323Z" transform="translate(38.805 37.496)" fill="#343f52"/>
+            </g>
+          </svg>
+        </a>
+      </div>
+      <h1 class="auth-title">Welcome back</h1>
+      <p class="auth-subtitle">Sign in to your account to continue</p>
+      <div id="auth-error" class="auth-error"></div>
+      <form id="login-form">
+        <input type="email" class="auth-input" id="login-email" placeholder="Email address" required autocomplete="email">
+        <input type="password" class="auth-input" id="login-password" placeholder="Password" required autocomplete="current-password">
+        <button type="submit" class="auth-btn" id="login-btn">Sign In</button>
+      </form>
+      <div class="auth-footer">
+        Don't have an account? <a href="/register">Sign up</a>
+      </div>
+    </div>
+  </div>
+  <script type="module">
+    import { handleLoginSubmit } from "../assets/js/user-auth-ui.js";
+
+    document.getElementById("login-form").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const email = document.getElementById("login-email").value;
+      const password = document.getElementById("login-password").value;
+      const btn = document.getElementById("login-btn");
+      const errorEl = document.getElementById("auth-error");
+
+      errorEl.style.display = "none";
+      btn.disabled = true;
+      btn.textContent = "Signing in...";
+
+      try {
+        await handleLoginSubmit(email, password);
+        const redirect = new URLSearchParams(window.location.search).get("redirect") || "/blog";
+        window.location.href = redirect;
+      } catch (err) {
+        errorEl.textContent = err.message || "Invalid credentials";
+        errorEl.style.display = "block";
+        btn.disabled = false;
+        btn.textContent = "Sign In";
+      }
+    });
+  </script>
+</body>
+</html>

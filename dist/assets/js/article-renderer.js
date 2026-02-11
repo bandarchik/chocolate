@@ -1,4 +1,5 @@
 import { queryArticleBySlug, queryArticles } from "./convex-client.js";
+import { initCommentSection } from "./comment-section.js";
 
 export async function initArticlePage() {
   const slug = extractSlugFromUrl();
@@ -14,6 +15,11 @@ export async function initArticlePage() {
       return;
     }
     renderArticle(article);
+    if (article._id) {
+      initCommentSection(article._id).catch((err) =>
+        console.error("Comments init failed:", err)
+      );
+    }
     await loadRelatedArticles(article);
   } catch (err) {
     console.error("Failed to load article:", err);

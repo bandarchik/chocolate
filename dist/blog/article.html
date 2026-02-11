@@ -141,6 +141,7 @@
           </div>
           <div class="navbar-other w-full !flex !ms-auto">
             <ul class="navbar-nav !flex-row !items-center !ml-auto">
+              <li class="nav-item" id="auth-nav-slot"></li>
               <li class="nav-item xl:!hidden lg:!hidden">
                 <button class="hamburger offcanvas-nav-btn"><span></span></button>
               </li>
@@ -179,6 +180,7 @@
               <div class="card-body !p-6 md:!p-10">
                 <div id="article-stats" class="!text-center !mb-8"></div>
                 <div id="article-body"></div>
+                <div id="comments-section" class="!mt-8 !pt-8" style="border-top:2px solid #f0f0f4;"></div>
                 <div class="!text-center !mt-8 !mb-4 !p-5 md:!p-8 !rounded-[1rem]" style="background: #1a1c2e;">
                   <h3 class="!text-white !font-bold !mb-3 !text-[1.2rem] md:!text-[1.5rem]">Never Miss a Glitch</h3>
                   <p class="!text-[#a0a4b8] !mb-6 !text-[0.85rem] md:!text-[0.95rem]">Bandar's Bounties monitors retailers 24/7 so you never miss moments like these.</p>
@@ -211,5 +213,19 @@
   <script src="../assets/js/plugins.js"></script>
   <script src="../assets/js/theme.js"></script>
   <script type="module" src="../assets/js/article-renderer.js"></script>
+  <script type="module">
+    import { initAuthUI } from "../assets/js/user-auth-ui.js";
+    import { initNotificationBell } from "../assets/js/notification-panel.js";
+
+    async function initCommunity() {
+      await initAuthUI();
+      await initNotificationBell();
+    }
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", initCommunity);
+    } else {
+      initCommunity();
+    }
+  </script>
 </body>
 </html>
