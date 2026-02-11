@@ -4,7 +4,8 @@
   "description": "Sandbox - Modern & Multipurpose Tailwind CSS Template",
   "main": "index.js",
   "scripts": {
-    "build": "npx @tailwindcss/cli -i ./src/input.css -o ./dist/style.css --watch"
+    "build": "npx @tailwindcss/cli -i ./src/input.css -o ./dist/style.css --watch",
+    "vercel-build": "npx @tailwindcss/cli -i ./src/input.css -o ./dist/style.css"
   },
   "keywords": [],
   "author": "ib-theme",
