@@ -9,7 +9,7 @@
   <meta name="keywords"
     content="Tailwind CSS, business, corporate, creative, gulp, marketing, minimal, modern, multipurpose, one page, responsive, saas, sass, seo, startup, html5 template, site template">
   <meta name="author" content="elemis">
-  <title>Sandbox - Modern & Multipurpose Tailwind CSS Template</title>
+  <title>Bandar's Bounties - The Actual #1 Source for Price Mistakes</title>
   <link rel="shortcut icon" href="./assets/img/favicon.png">
   <link rel="stylesheet" type="text/css" href="./assets/fonts/unicons/unicons.css">
   <link rel="stylesheet" href="./assets/css/plugins.css">
@@ -23,10 +23,64 @@
       color: #ffffff !important;
     }
 
+    /* Fix for double navbar glitch */
+    .navbar-clone:not(.navbar-stick) {
+      display: none !important;
+    }
+
     @media (max-width: 991.98px) {
       .navbar-expand-lg .navbar-collapse .dropdown-toggle:after {
         color: #ffffff !important;
       }
+    }
+
+    @keyframes wiggle {
+      0%, 100% { transform: rotate(0deg); }
+      15% { transform: rotate(-1.5deg); }
+      30% { transform: rotate(1.5deg); }
+      45% { transform: rotate(-1deg); }
+      60% { transform: rotate(1deg); }
+      75% { transform: rotate(0deg); }
+    }
+
+    @keyframes bounceArrow {
+      0%, 100% { transform: translateY(0); opacity: 1; }
+      50% { transform: translateY(8px); opacity: 0.5; }
+    }
+
+    .btn {
+      transition: transform 0.15s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.15s ease;
+    }
+
+    .btn:active {
+      transform: scale(0.95) !important;
+      box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15) !important;
+    }
+
+    .mega-menu-img .dropdown-item figure {
+      position: relative;
+    }
+
+    .mega-menu-img .dropdown-item .demo-label {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0, 0, 0, 0.75);
+      color: #fff;
+      text-align: center;
+      padding: 6px 0;
+      font-size: 0.75rem;
+      font-weight: 600;
+      border-radius: 0 0 0.4rem 0.4rem;
+      opacity: 0;
+      transition: opacity 0.2s ease;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .mega-menu-img .dropdown-item:hover .demo-label {
+      opacity: 1;
     }
   </style>
 </head>
@@ -36,9 +90,9 @@
     <header class="!absolute w-full">
       <div class="gradient-5 !text-white font-bold !text-[.75rem] !mb-2 !relative" style="z-index: 1;">
         <div class="container py-2 !text-center">
-          <p class="!mb-0">✨ VueJs Version of Sandbox is released! Grab a copy <a
-              href="https://themeforest.net/item/sandbox-modern-multipurpose-vuejs-template/54557232?s_rank=4"
-              class="!text-white hover inline-flex items-center" target="_blank">here <i
+          <p class="!mb-0">✨ Bandar's Bounties is having a SALE! Join <a
+              href="https://whop.com/bandarsbounties"
+              class="!text-white hover inline-flex items-center" target="_blank">NOW ✨<i
                 class="uil uil-arrow-up-right before:content-['\e950']"></i></a></p>
         </div>
         <!-- /.container -->
@@ -75,7 +129,7 @@
                           <a class="dropdown-item" href="./demo1.html">
                             <figure class="!rounded-[.4rem] lift hidden xl:block lg:block"><img class="!rounded-[.4rem]"
                                 src="./assets/img/demos/mi1.jpg" srcset="./assets/img/demos/mi1@2x.jpg 2x" alt="image">
-                            </figure>
+                            <span class="demo-label hidden xl:block lg:block">Demo 1</span></figure>
                             <span class="xl:!hidden lg:!hidden">Demo 1</span>
                           </a>
                         </li>
@@ -83,7 +137,7 @@
                           <a class="dropdown-item" href="./demo2.html">
                             <figure class="!rounded-[.4rem] lift hidden xl:block lg:block"><img class="!rounded-[.4rem]"
                                 src="./assets/img/demos/mi2.jpg" srcset="./assets/img/demos/mi2@2x.jpg 2x" alt="image">
-                            </figure>
+                            <span class="demo-label hidden xl:block lg:block">Demo 2</span></figure>
                             <span class="xl:!hidden lg:!hidden">Demo 2</span>
                           </a>
                         </li>
@@ -91,7 +145,7 @@
                           <a class="dropdown-item" href="./demo3.html">
                             <figure class="!rounded-[.4rem] lift hidden xl:block lg:block"><img class="!rounded-[.4rem]"
                                 src="./assets/img/demos/mi3.jpg" srcset="./assets/img/demos/mi3@2x.jpg 2x" alt="image">
-                            </figure>
+                            <span class="demo-label hidden xl:block lg:block">Demo 3</span></figure>
                             <span class="xl:!hidden lg:!hidden">Demo 3</span>
                           </a>
                         </li>
@@ -99,7 +153,7 @@
                           <a class="dropdown-item" href="./demo4.html">
                             <figure class="!rounded-[.4rem] lift hidden xl:block lg:block"><img class="!rounded-[.4rem]"
                                 src="./assets/img/demos/mi4.jpg" srcset="./assets/img/demos/mi4@2x.jpg 2x" alt="image">
-                            </figure>
+                            <span class="demo-label hidden xl:block lg:block">Demo 4</span></figure>
                             <span class="xl:!hidden lg:!hidden">Demo 4</span>
                           </a>
                         </li>
@@ -107,7 +161,7 @@
                           <a class="dropdown-item" href="./demo5.html">
                             <figure class="!rounded-[.4rem] lift hidden xl:block lg:block"><img class="!rounded-[.4rem]"
                                 src="./assets/img/demos/mi5.jpg" srcset="./assets/img/demos/mi5@2x.jpg 2x" alt="image">
-                            </figure>
+                            <span class="demo-label hidden xl:block lg:block">Demo 5</span></figure>
                             <span class="xl:!hidden lg:!hidden">Demo 5</span>
                           </a>
                         </li>
@@ -115,7 +169,7 @@
                           <a class="dropdown-item" href="./demo6.html">
                             <figure class="!rounded-[.4rem] lift hidden xl:block lg:block"><img class="!rounded-[.4rem]"
                                 src="./assets/img/demos/mi6.jpg" srcset="./assets/img/demos/mi6@2x.jpg 2x" alt="image">
-                            </figure>
+                            <span class="demo-label hidden xl:block lg:block">Demo 6</span></figure>
                             <span class="xl:!hidden lg:!hidden">Demo 6</span>
                           </a>
                         </li>
@@ -123,7 +177,7 @@
                           <a class="dropdown-item" href="./demo7.html">
                             <figure class="!rounded-[.4rem] lift hidden xl:block lg:block"><img class="!rounded-[.4rem]"
                                 src="./assets/img/demos/mi7.jpg" srcset="./assets/img/demos/mi7@2x.jpg 2x" alt="image">
-                            </figure>
+                            <span class="demo-label hidden xl:block lg:block">Demo 7</span></figure>
                             <span class="xl:!hidden lg:!hidden">Demo 7</span>
                           </a>
                         </li>
@@ -131,7 +185,7 @@
                           <a class="dropdown-item" href="./demo8.html">
                             <figure class="!rounded-[.4rem] lift hidden xl:block lg:block"><img class="!rounded-[.4rem]"
                                 src="./assets/img/demos/mi8.jpg" srcset="./assets/img/demos/mi8@2x.jpg 2x" alt="image">
-                            </figure>
+                            <span class="demo-label hidden xl:block lg:block">Demo 8</span></figure>
                             <span class="xl:!hidden lg:!hidden">Demo 8</span>
                           </a>
                         </li>
@@ -139,7 +193,7 @@
                           <a class="dropdown-item" href="./demo9.html">
                             <figure class="!rounded-[.4rem] lift hidden xl:block lg:block"><img class="!rounded-[.4rem]"
                                 src="./assets/img/demos/mi9.jpg" srcset="./assets/img/demos/mi9@2x.jpg 2x" alt="image">
-                            </figure>
+                            <span class="demo-label hidden xl:block lg:block">Demo 9</span></figure>
                             <span class="xl:!hidden lg:!hidden">Demo 9</span>
                           </a>
                         </li>
@@ -147,7 +201,7 @@
                           <a class="dropdown-item" href="./demo10.html">
                             <figure class="!rounded-[.4rem] lift hidden xl:block lg:block"><img class="!rounded-[.4rem]"
                                 src="./assets/img/demos/mi10.jpg" srcset="./assets/img/demos/mi10@2x.jpg 2x"
-                                alt="image"></figure>
+                                alt="image"><span class="demo-label hidden xl:block lg:block">Demo 10</span></figure>
                             <span class="xl:!hidden lg:!hidden">Demo 10</span>
                           </a>
                         </li>
@@ -155,7 +209,7 @@
                           <a class="dropdown-item" href="./demo11.html">
                             <figure class="!rounded-[.4rem] lift hidden xl:block lg:block"><img class="!rounded-[.4rem]"
                                 src="./assets/img/demos/mi11.jpg" srcset="./assets/img/demos/mi11@2x.jpg 2x"
-                                alt="image"></figure>
+                                alt="image"><span class="demo-label hidden xl:block lg:block">Demo 11</span></figure>
                             <span class="xl:!hidden lg:!hidden">Demo 11</span>
                           </a>
                         </li>
@@ -163,7 +217,7 @@
                           <a class="dropdown-item" href="./demo12.html">
                             <figure class="!rounded-[.4rem] lift hidden xl:block lg:block"><img class="!rounded-[.4rem]"
                                 src="./assets/img/demos/mi12.jpg" srcset="./assets/img/demos/mi12@2x.jpg 2x"
-                                alt="image"></figure>
+                                alt="image"><span class="demo-label hidden xl:block lg:block">Demo 12</span></figure>
                             <span class="xl:!hidden lg:!hidden">Demo 12</span>
                           </a>
                         </li>
@@ -171,7 +225,7 @@
                           <a class="dropdown-item" href="./demo13.html">
                             <figure class="!rounded-[.4rem] lift hidden xl:block lg:block"><img class="!rounded-[.4rem]"
                                 src="./assets/img/demos/mi13.jpg" srcset="./assets/img/demos/mi13@2x.jpg 2x"
-                                alt="image"></figure>
+                                alt="image"><span class="demo-label hidden xl:block lg:block">Demo 13</span></figure>
                             <span class="xl:!hidden lg:!hidden">Demo 13</span>
                           </a>
                         </li>
@@ -179,7 +233,7 @@
                           <a class="dropdown-item" href="./demo14.html">
                             <figure class="!rounded-[.4rem] lift hidden xl:block lg:block"><img class="!rounded-[.4rem]"
                                 src="./assets/img/demos/mi14.jpg" srcset="./assets/img/demos/mi14@2x.jpg 2x"
-                                alt="image"></figure>
+                                alt="image"><span class="demo-label hidden xl:block lg:block">Demo 14</span></figure>
                             <span class="xl:!hidden lg:!hidden">Demo 14</span>
                           </a>
                         </li>
@@ -187,7 +241,7 @@
                           <a class="dropdown-item" href="./demo15.html">
                             <figure class="!rounded-[.4rem] lift hidden xl:block lg:block"><img class="!rounded-[.4rem]"
                                 src="./assets/img/demos/mi15.jpg" srcset="./assets/img/demos/mi15@2x.jpg 2x"
-                                alt="image"></figure>
+                                alt="image"><span class="demo-label hidden xl:block lg:block">Demo 15</span></figure>
                             <span class="xl:!hidden lg:!hidden">Demo 15</span>
                           </a>
                         </li>
@@ -195,7 +249,7 @@
                           <a class="dropdown-item" href="./demo16.html">
                             <figure class="!rounded-[.4rem] lift hidden xl:block lg:block"><img class="!rounded-[.4rem]"
                                 src="./assets/img/demos/mi16.jpg" srcset="./assets/img/demos/mi16@2x.jpg 2x"
-                                alt="image"></figure>
+                                alt="image"><span class="demo-label hidden xl:block lg:block">Demo 16</span></figure>
                             <span class="xl:!hidden lg:!hidden">Demo 16</span>
                           </a>
                         </li>
@@ -203,7 +257,7 @@
                           <a class="dropdown-item" href="./demo17.html">
                             <figure class="!rounded-[.4rem] lift hidden xl:block lg:block"><img class="!rounded-[.4rem]"
                                 src="./assets/img/demos/mi17.jpg" srcset="./assets/img/demos/mi17@2x.jpg 2x"
-                                alt="image"></figure>
+                                alt="image"><span class="demo-label hidden xl:block lg:block">Demo 17</span></figure>
                             <span class="xl:!hidden lg:!hidden">Demo 17</span>
                           </a>
                         </li>
@@ -211,7 +265,7 @@
                           <a class="dropdown-item" href="./demo18.html">
                             <figure class="!rounded-[.4rem] lift hidden xl:block lg:block"><img class="!rounded-[.4rem]"
                                 src="./assets/img/demos/mi18.jpg" srcset="./assets/img/demos/mi18@2x.jpg 2x"
-                                alt="image"></figure>
+                                alt="image"><span class="demo-label hidden xl:block lg:block">Demo 18</span></figure>
                             <span class="xl:!hidden lg:!hidden">Demo 18</span>
                           </a>
                         </li>
@@ -219,7 +273,7 @@
                           <a class="dropdown-item" href="./demo19.html">
                             <figure class="!rounded-[.4rem] lift hidden xl:block lg:block"><img class="!rounded-[.4rem]"
                                 src="./assets/img/demos/mi19.jpg" srcset="./assets/img/demos/mi19@2x.jpg 2x"
-                                alt="image"></figure>
+                                alt="image"><span class="demo-label hidden xl:block lg:block">Demo 19</span></figure>
                             <span class="xl:!hidden lg:!hidden">Demo 19</span>
                           </a>
                         </li>
@@ -227,7 +281,7 @@
                           <a class="dropdown-item" href="./demo20.html">
                             <figure class="!rounded-[.4rem] lift hidden xl:block lg:block"><img class="!rounded-[.4rem]"
                                 src="./assets/img/demos/mi20.jpg" srcset="./assets/img/demos/mi20@2x.jpg 2x"
-                                alt="image"></figure>
+                                alt="image"><span class="demo-label hidden xl:block lg:block">Demo 20</span></figure>
                             <span class="xl:!hidden lg:!hidden">Demo 20</span>
                           </a>
                         </li>
@@ -235,7 +289,7 @@
                           <a class="dropdown-item" href="./demo21.html">
                             <figure class="!rounded-[.4rem] lift hidden xl:block lg:block"><img class="!rounded-[.4rem]"
                                 src="./assets/img/demos/mi21.jpg" srcset="./assets/img/demos/mi21@2x.jpg 2x"
-                                alt="image"></figure>
+                                alt="image"><span class="demo-label hidden xl:block lg:block">Demo 21</span></figure>
                             <span class="xl:!hidden lg:!hidden">Demo 21</span>
                           </a>
                         </li>
@@ -243,7 +297,7 @@
                           <a class="dropdown-item" href="./demo22.html">
                             <figure class="!rounded-[.4rem] lift hidden xl:block lg:block"><img class="!rounded-[.4rem]"
                                 src="./assets/img/demos/mi22.jpg" srcset="./assets/img/demos/mi22@2x.jpg 2x"
-                                alt="image"></figure>
+                                alt="image"><span class="demo-label hidden xl:block lg:block">Demo 22</span></figure>
                             <span class="xl:!hidden lg:!hidden">Demo 22</span>
                           </a>
                         </li>
@@ -251,7 +305,7 @@
                           <a class="dropdown-item" href="./demo23.html">
                             <figure class="!rounded-[.4rem] lift hidden xl:block lg:block"><img class="!rounded-[.4rem]"
                                 src="./assets/img/demos/mi23.jpg" srcset="./assets/img/demos/mi23@2x.jpg 2x"
-                                alt="image"></figure>
+                                alt="image"><span class="demo-label hidden xl:block lg:block">Demo 23</span></figure>
                             <span class="xl:!hidden lg:!hidden">Demo 23</span>
                           </a>
                         </li>
@@ -259,7 +313,7 @@
                           <a class="dropdown-item" href="./demo24.html">
                             <figure class="!rounded-[.4rem] lift hidden xl:block lg:block"><img class="!rounded-[.4rem]"
                                 src="./assets/img/demos/mi24.jpg" srcset="./assets/img/demos/mi24@2x.jpg 2x"
-                                alt="image"></figure>
+                                alt="image"><span class="demo-label hidden xl:block lg:block">Demo 24</span></figure>
                             <span class="xl:!hidden lg:!hidden">Demo 24</span>
                           </a>
                         </li>
@@ -267,7 +321,7 @@
                           <a class="dropdown-item" href="./demo25.html">
                             <figure class="!rounded-[.4rem] lift hidden xl:block lg:block"><img class="!rounded-[.4rem]"
                                 src="./assets/img/demos/mi25.jpg" srcset="./assets/img/demos/mi25@2x.jpg 2x"
-                                alt="image"></figure>
+                                alt="image"><span class="demo-label hidden xl:block lg:block">Demo 25</span></figure>
                             <span class="xl:!hidden lg:!hidden">Demo 25</span>
                           </a>
                         </li>
@@ -275,7 +329,7 @@
                           <a class="dropdown-item" href="./demo26.html">
                             <figure class="!rounded-[.4rem] lift hidden xl:block lg:block"><img class="!rounded-[.4rem]"
                                 src="./assets/img/demos/mi26.jpg" srcset="./assets/img/demos/mi26@2x.jpg 2x"
-                                alt="image"></figure>
+                                alt="image"><span class="demo-label hidden xl:block lg:block">Demo 26</span></figure>
                             <span class="xl:!hidden lg:!hidden">Demo 26</span>
                           </a>
                         </li>
@@ -283,7 +337,7 @@
                           <a class="dropdown-item" href="./demo27.html">
                             <figure class="!rounded-[.4rem] lift hidden xl:block lg:block"><img class="!rounded-[.4rem]"
                                 src="./assets/img/demos/mi27.jpg" srcset="./assets/img/demos/mi27@2x.jpg 2x"
-                                alt="image"></figure>
+                                alt="image"><span class="demo-label hidden xl:block lg:block">Demo 27</span></figure>
                             <span class="xl:!hidden lg:!hidden">Demo 27</span>
                           </a>
                         </li>
@@ -291,7 +345,7 @@
                           <a class="dropdown-item" href="./demo28.html">
                             <figure class="!rounded-[.4rem] lift hidden xl:block lg:block"><img class="!rounded-[.4rem]"
                                 src="./assets/img/demos/mi28.jpg" srcset="./assets/img/demos/mi28@2x.jpg 2x"
-                                alt="image"></figure>
+                                alt="image"><span class="demo-label hidden xl:block lg:block">Demo 28</span></figure>
                             <span class="xl:!hidden lg:!hidden">Demo 28</span>
                           </a>
                         </li>
@@ -299,7 +353,7 @@
                           <a class="dropdown-item" href="./demo29.html">
                             <figure class="!rounded-[.4rem] lift hidden xl:block lg:block"><img class="!rounded-[.4rem]"
                                 src="./assets/img/demos/mi29.jpg" srcset="./assets/img/demos/mi29@2x.jpg 2x"
-                                alt="image"></figure>
+                                alt="image"><span class="demo-label hidden xl:block lg:block">Demo 29</span></figure>
                             <span class="xl:!hidden lg:!hidden">Demo 29</span>
                           </a>
                         </li>
@@ -307,7 +361,7 @@
                           <a class="dropdown-item" href="./demo30.html">
                             <figure class="!rounded-[.4rem] lift hidden xl:block lg:block"><img class="!rounded-[.4rem]"
                                 src="./assets/img/demos/mi30.jpg" srcset="./assets/img/demos/mi30@2x.jpg 2x"
-                                alt="image"></figure>
+                                alt="image"><span class="demo-label hidden xl:block lg:block">Demo 30</span></figure>
                             <span class="xl:!hidden lg:!hidden">Demo 30</span>
                           </a>
                         </li>
@@ -315,7 +369,7 @@
                           <a class="dropdown-item" href="./demo31.html">
                             <figure class="!rounded-[.4rem] lift hidden xl:block lg:block"><img class="!rounded-[.4rem]"
                                 src="./assets/img/demos/mi31.jpg" srcset="./assets/img/demos/mi31@2x.jpg 2x"
-                                alt="image"></figure>
+                                alt="image"><span class="demo-label hidden xl:block lg:block">Demo 31</span></figure>
                             <span class="xl:!hidden lg:!hidden">Demo 31</span>
                           </a>
                         </li>
@@ -323,7 +377,7 @@
                           <a class="dropdown-item" href="./demo32.html">
                             <figure class="!rounded-[.4rem] lift hidden xl:block lg:block"><img class="!rounded-[.4rem]"
                                 src="./assets/img/demos/mi32.jpg" srcset="./assets/img/demos/mi32@2x.jpg 2x"
-                                alt="image"></figure>
+                                alt="image"><span class="demo-label hidden xl:block lg:block">Demo 32</span></figure>
                             <span class="xl:!hidden lg:!hidden">Demo 32</span>
                           </a>
                         </li>
@@ -331,7 +385,7 @@
                           <a class="dropdown-item" href="./demo33.html">
                             <figure class="!rounded-[.4rem] lift hidden xl:block lg:block"><img class="!rounded-[.4rem]"
                                 src="./assets/img/demos/mi33.jpg" srcset="./assets/img/demos/mi33@2x.jpg 2x"
-                                alt="image"></figure>
+                                alt="image"><span class="demo-label hidden xl:block lg:block">Demo 33</span></figure>
                             <span class="xl:!hidden lg:!hidden">Demo 33</span>
                           </a>
                         </li>
@@ -339,15 +393,41 @@
                           <a class="dropdown-item" href="./demo34.html">
                             <figure class="!rounded-[.4rem] lift hidden xl:block lg:block"><img class="!rounded-[.4rem]"
                                 src="./assets/img/demos/mi34.jpg" srcset="./assets/img/demos/mi34@2x.jpg 2x"
-                                alt="image"></figure>
+                                alt="image"><span class="demo-label hidden xl:block lg:block">Demo 34</span></figure>
                             <span class="xl:!hidden lg:!hidden">Demo 34</span>
                           </a>
                         </li>
                       </ul>
                       <!--/.row -->
-                      <span class="hidden xl:!flex lg:!flex"><i
+                      <span class="hidden xl:!flex lg:!flex scroll-hint" style="transition: opacity 0.3s ease;"><i
                           class="uil uil-direction before:content-['\ea93']"></i><strong>Scroll to view
                           more</strong></span>
+                      <script>
+                        (function() {
+                          function setupScrollHint() {
+                            var scroller = document.querySelector('.mega-menu-scroll');
+                            var hint = scroller && scroller.querySelector('.scroll-hint');
+                            if (!scroller || !hint) return;
+                            scroller.addEventListener('scroll', function() {
+                              var atBottom = scroller.scrollHeight - scroller.scrollTop - scroller.clientHeight < 20;
+                              hint.style.opacity = atBottom ? '0' : '1';
+                            });
+                            // Reset when dropdown reopens
+                            var dropdown = scroller.closest('.dropdown');
+                            if (dropdown) {
+                              dropdown.addEventListener('mouseenter', function() {
+                                scroller.scrollTop = 0;
+                                hint.style.opacity = '1';
+                              });
+                            }
+                          }
+                          if (document.readyState === 'loading') {
+                            document.addEventListener('DOMContentLoaded', setupScrollHint);
+                          } else {
+                            setupScrollHint();
+                          }
+                        })();
+                      </script>
                     </li>
                     <!--/.mega-menu-content-->
                   </ul>
@@ -781,9 +861,9 @@
           <div class="navbar-other w-full flex !ml-auto">
             <ul class="navbar-nav !flex-row items-center !ml-auto">
               <li class="nav-item hidden xl:block lg:block md:block">
-                <a href="https://themeforest.net/item/sandbox-modern-multipurpose-tailwind-css-template/51340309"
+                <a href="https://whop.com/bandarsbounties"
                   class="btn btn-grape !text-white !bg-[#605dba] border-[#605dba] hover:text-white hover:bg-[#605dba] hover:!border-[#605dba]   active:text-white active:bg-[#605dba] active:border-[#605dba] disabled:text-white disabled:bg-[#605dba] disabled:border-[#605dba] !rounded-[0.8rem]"
-                  target="_blank">Purchase Now</a>
+                  target="_blank">Join Now</a>
               </li>
               <li class="nav-item xl:!hidden lg:!hidden">
                 <button class="hamburger offcanvas-nav-btn"><span></span></button>
@@ -805,13 +885,8 @@
             src="./assets/img/photos/blurry.png" alt="image"></div>
         <div class="flex flex-wrap mx-[-15px] !relative">
           <div class="lg:w-8/12 xl:w-8/12 xxl:w-7/12 w-full flex-[0_0_auto] !px-[15px] max-w-full !mx-auto !relative">
-            <div class="absolute shape grape w-5 hidden xl:block lg:block" style="top: -5%; left: -15%;"
-              data-cue="fadeIn" data-delay="1500"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 219.5 219.5"
-                data-inject-url="https://sandbox-tailwind-template.netlify.app/assets/img/svg/pie.svg"
-                class="svg-inject icon-svg !w-full !h-full">
-                <path class="svg-fill"
-                  d="M219.5 219.5H0c0-58.19 23.14-114.06 64.29-155.21A219.561 219.561 0 01219.5 0v219.5z"></path>
-              </svg></div>
+            <div class="absolute hidden xl:block lg:block" style="top: -5%; left: -15%; width: 60px;"
+              data-cue="fadeIn" data-delay="1500"><img src="./assets/img/photos/freebie_icon.png" alt="gift" style="width: 100%;"></div>
             <div class="absolute shape violet !w-[2.5rem] hidden xl:block lg:block" style="bottom: 30%; left: -20%;"
               data-cue="fadeIn" data-delay="1500"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 457.71 446.45"
                 data-inject-url="https://sandbox-tailwind-template.netlify.app/assets/img/svg/scribble.svg"
@@ -820,43 +895,45 @@
                   d="M205.62 442.54c-.51-.41-.99-.84-1.46-1.31-10.4-10.39-3.61-27.12 11.63-52.5 11.72-19.51 28.48-43.74 46.22-69.39 17.53-25.34 35.66-51.54 49.01-73.47 14.73-24.19 18.57-35.01 19.51-39.48-3.86-.28-13.15.3-33.78 6.52-19.71 5.94-43.09 14.92-65.7 23.6-63.8 24.49-85.35 31.41-96.51 19.5-3.21-3.43-7.62-11.04-1.12-23.54 2.49-4.79 6.64-10.51 12.68-17.5 10.4-12.03 25.04-26.34 40.55-41.49 14.02-13.7 28.53-27.87 39.53-40.11 9.93-11.04 14.15-17.43 15.94-20.82-3.43-.75-10.24-1.51-23.25-.92-14.99.68-33.44 2.89-51.28 5.02-46.92 5.61-74.09 8.33-86.81-.99-4.78-3.5-7.67-8.42-8.41-14.24-1.97-15.58 12.45-33.15 29.14-53.5 5.31-6.47 13.31-16.22 17.36-22.68-4.51-.38-12.43-.4-25.97 1.1-16.54 1.82-35.62 5.22-50.95 7.96-12.62 2.25-22.6 4.03-28.48 4.49C6.6 39.3.58 34.17.04 27.28c-.54-6.88 4.6-12.9 11.48-13.44 4.66-.37 14.58-2.13 26.06-4.18C54.56 6.63 75.7 2.86 94 1.07c26.41-2.6 40.16-.54 47.48 7.13 7.01 7.34 6.45 17.66-1.68 30.66-4.72 7.55-11.63 15.98-18.95 24.9-6.18 7.53-12.57 15.31-17.24 22.19-3.35 4.92-4.95 8.13-5.71 10.07 3 .54 9.09 1.08 20.87.43 13.21-.73 29.07-2.63 45.86-4.64 59.99-7.17 94.33-10.22 102.49 10.62 7.4 18.93-16.51 43.51-62.99 88.92-12.69 12.4-24.68 24.11-34.04 34.28-3.17 3.45-5.68 6.34-7.67 8.75 15.88-4.42 41.18-14.13 59.67-21.22 62.4-23.96 101.69-37.87 121.09-29.14 5.38 2.42 9.26 6.47 11.23 11.72 7.48 19.95-16.15 57.31-71.83 137.82-15.49 22.39-30.12 43.55-41.18 61.25-7.13 11.4-11.3 19.11-13.75 24.25 8.97-3.3 25.58-11 55.73-28.8 32.68-19.29 70.61-44.04 101.09-63.94 24.62-16.07 44.07-28.76 54.65-34.68 6.03-3.37 13.64-1.22 17.01 4.81 3.37 6.03 1.22 13.64-4.81 17.01-9.83 5.5-29.92 18.61-53.18 33.79-33.46 21.84-75.1 49.01-110.05 69.21-49.35 28.51-70.85 35.44-82.46 26.07z">
                 </path>
               </svg></div>
-            <div class="absolute shape fuchsia w-6 hidden xl:block lg:block"
-              style="top: 0%; right: -25%; transform: rotate(70deg);" data-cue="fadeIn" data-delay="1500"><svg
-                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 411.42 329.24"
-                data-inject-url="https://sandbox-tailwind-template.netlify.app/assets/img/svg/tri.svg"
-                class="svg-inject icon-svg !w-full !h-full">
-                <g data-name="Layer 2">
-                  <path class="svg-fill"
-                    d="M164.34 21.92L8.72 251.15c-22.54 33.2 1.24 78.09 41.37 78.09h311.24c40.13 0 63.91-44.89 41.37-78.09L247.08 21.92a50 50 0 00-82.74 0z"
-                    data-name="Layer 1"></path>
-                </g>
-              </svg></div>
-            <div class="absolute shape yellow w-6 hidden xl:block lg:block" style="bottom: 25%; right: -17%;"
-              data-cue="fadeIn" data-delay="1500"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500"
-                data-inject-url="https://sandbox-tailwind-template.netlify.app/assets/img/svg/circle.svg"
-                class="svg-inject icon-svg !w-full !h-full">
-                <g data-name="Layer 2">
-                  <path class="svg-fill"
-                    d="M250 0C111.93 0 0 111.93 0 250s111.93 250 250 250 250-111.93 250-250S388.07 0 250 0zm0 425a175 175 0 11175-175 175 175 0 01-175 175z"
-                    data-name="Layer 1"></path>
-                </g>
-              </svg></div>
+            <div class="absolute hidden xl:block lg:block" style="top: 0%; right: -25%; width: 150px;"
+              data-cue="fadeIn" data-delay="1500"><img src="./assets/img/photos/99off_icon.png" alt="99% off" style="width: 100%;"></div>
+            <div class="absolute hidden xl:block lg:block" style="bottom: 25%; right: -17%; width: 150px;"
+              data-cue="fadeIn" data-delay="1500"><img src="./assets/img/photos/bell_icon.png" alt="bell" style="width: 100%;"></div>
             <div data-cues="slideInDown" data-group="page-title">
               <h1
                 class="xl:!text-[3.2rem] !text-[calc(1.445rem_+_2.34vw)] font-semibold !leading-[1.15] !mb-5 md:mx-10 lg:mx-0 xl:mx-0">
-                Create a powerful but effortless website for <br><span class="rotator-fade !text-[#605dba] ">Tailwind
+                The ACTUAL #1 Source for Price Mistakes <br><span class="rotator-fade !text-[#605dba] ">Tailwind
                   CSS, your
                   business.,your portfolio.,your startup.,digital marketing.</span></h1>
-              <p class="lead !text-[1.2rem] !leading-[1.6] !mb-8">You can create your website in minutes with the help
-                of countless amazing features of Sandbox.</p>
+              <p class="lead !text-[1.2rem] !leading-[1.6] !mb-8"><span style="display:inline-block; animation: wiggle 2.5s ease-in-out infinite;">Stop paying for other groups</span> who repost & recycle information MINUTES later. We have the <span id="proof-rotator" style="font-weight:700; color:#605dba; display:inline-block; min-width: 12ch; text-align: center;">PROOF</span> 👇</p>
+              <script>
+                (function() {
+                  var words = ['PROOF', 'TIMESTAMPS', 'SUCCESS'];
+                  var i = 0;
+                  var el = document.getElementById('proof-rotator');
+                  if (!el) return;
+                  setInterval(function() {
+                    el.style.opacity = '0';
+                    el.style.transform = 'translateY(-8px)';
+                    setTimeout(function() {
+                      i = (i + 1) % words.length;
+                      el.textContent = words[i];
+                      el.style.transform = 'translateY(8px)';
+                      void el.offsetWidth;
+                      el.style.opacity = '1';
+                      el.style.transform = 'translateY(0)';
+                    }, 300);
+                  }, 2500);
+                  el.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+                })();
+              </script>
             </div>
             <div class="xl:!flex lg:!flex md:!flex justify-center" data-cues="slideInDown" data-delay="600">
               <span><a href="#demos"
-                  class="btn btn-lg btn-grape !text-white !bg-[#605dba] border-[#605dba] hover:text-white hover:bg-[#605dba] hover:!border-[#605dba]   active:text-white active:bg-[#605dba] active:border-[#605dba] disabled:text-white disabled:bg-[#605dba] disabled:border-[#605dba] btn-icon btn-icon-end !rounded-[0.8rem] xl:mx-1 lg:mx-1 md:mx-1 !mb-2 xl:!mb-0 lg:!mb-0 md:!mb-0 scroll">See
-                  Demo Pages <i class="uil uil-arrow-down-right before:content-['\e944'] !ml-[0.3rem]"></i></a></span>
-              <span><a href="https://themeforest.net/item/sandbox-modern-multipurpose-vuejs-template/54557232?s_rank=4"
+                  class="btn btn-lg btn-grape !text-white !bg-[#605dba] border-[#605dba] hover:text-white hover:bg-[#605dba] hover:!border-[#605dba]   active:text-white active:bg-[#605dba] active:border-[#605dba] disabled:text-white disabled:bg-[#605dba] disabled:border-[#605dba] btn-icon btn-icon-end !rounded-[0.8rem] xl:mx-1 lg:mx-1 md:mx-1 !mb-2 xl:!mb-0 lg:!mb-0 md:!mb-0 scroll">Price Mistakes <i class="uil uil-arrow-down-right before:content-['\e944'] !ml-[0.3rem]"></i></a></span>
+              <span><a href="https://whop.com/bandarsbounties"
                   class="btn btn-lg btn-fuchsia !text-white !bg-[#e668b3] border-[#e668b3] hover:text-white hover:bg-[#e668b3] hover:!border-[#e668b3]   active:text-white active:bg-[#e668b3] active:border-[#e668b3] disabled:text-white disabled:bg-[#e668b3] disabled:border-[#e668b3] btn-icon btn-icon-end !rounded-[0.8rem] xl:mx-1 lg:mx-1 md:mx-1"
-                  target="_blank">VueJs Version <i
+                  target="_blank"> Sign Up <i
                     class="uil uil-arrow-up-right !ml-[.3rem] before:content-['\e950']"></i></a></span>
             </div>
             <!-- /div -->
@@ -927,50 +1004,43 @@
             <div class="swiper-slide">
               <figure
                 class="!rounded-[0.8rem] shadow-[rgba(30,34,40,0.02)_0_2px_1px,rgba(30,34,40,0.02)_0_4px_2px,rgba(30,34,40,0.02)_0_8px_4px,rgba(30,34,40,0.02)_0_16px_8px,rgba(30,34,40,0.03)_0_32px_16px]">
-                <img class="!rounded-[.8rem]" src="./assets/img/photos/ma1.jpg"
-                  srcset="./assets/img/photos/ma1@2x.jpg 2x" alt="" />
+                <img class="!rounded-[.8rem]" src="./assets/img/photos/bb-hero.png" alt="" />
               </figure>
             </div>
             <div class="swiper-slide">
               <figure
                 class="!rounded-[0.8rem] shadow-[rgba(30,34,40,0.02)_0_2px_1px,rgba(30,34,40,0.02)_0_4px_2px,rgba(30,34,40,0.02)_0_8px_4px,rgba(30,34,40,0.02)_0_16px_8px,rgba(30,34,40,0.03)_0_32px_16px]">
-                <img class="!rounded-[.8rem]" src="./assets/img/photos/ma2.jpg"
-                  srcset="./assets/img/photos/ma2@2x.jpg 2x" alt="" />
+                <img class="!rounded-[.8rem]" src="./assets/img/photos/bb-hero.png" alt="" />
               </figure>
             </div>
             <div class="swiper-slide">
               <figure
                 class="!rounded-[0.8rem] shadow-[rgba(30,34,40,0.02)_0_2px_1px,rgba(30,34,40,0.02)_0_4px_2px,rgba(30,34,40,0.02)_0_8px_4px,rgba(30,34,40,0.02)_0_16px_8px,rgba(30,34,40,0.03)_0_32px_16px]">
-                <img class="!rounded-[.8rem]" src="./assets/img/photos/ma3.jpg"
-                  srcset="./assets/img/photos/ma3@2x.jpg 2x" alt="" />
+                <img class="!rounded-[.8rem]" src="./assets/img/photos/bb-hero.png" alt="" />
               </figure>
             </div>
             <div class="swiper-slide">
               <figure
                 class="!rounded-[0.8rem] shadow-[rgba(30,34,40,0.02)_0_2px_1px,rgba(30,34,40,0.02)_0_4px_2px,rgba(30,34,40,0.02)_0_8px_4px,rgba(30,34,40,0.02)_0_16px_8px,rgba(30,34,40,0.03)_0_32px_16px]">
-                <img class="!rounded-[.8rem]" src="./assets/img/photos/ma4.jpg"
-                  srcset="./assets/img/photos/ma4@2x.jpg 2x" alt="" />
+                <img class="!rounded-[.8rem]" src="./assets/img/photos/bb-hero.png" alt="" />
               </figure>
             </div>
             <div class="swiper-slide">
               <figure
                 class="!rounded-[0.8rem] shadow-[rgba(30,34,40,0.02)_0_2px_1px,rgba(30,34,40,0.02)_0_4px_2px,rgba(30,34,40,0.02)_0_8px_4px,rgba(30,34,40,0.02)_0_16px_8px,rgba(30,34,40,0.03)_0_32px_16px]">
-                <img class="!rounded-[.8rem]" src="./assets/img/photos/ma5.jpg"
-                  srcset="./assets/img/photos/ma5@2x.jpg 2x" alt="" />
+                <img class="!rounded-[.8rem]" src="./assets/img/photos/bb-hero.png" alt="" />
               </figure>
             </div>
             <div class="swiper-slide">
               <figure
                 class="!rounded-[0.8rem] shadow-[rgba(30,34,40,0.02)_0_2px_1px,rgba(30,34,40,0.02)_0_4px_2px,rgba(30,34,40,0.02)_0_8px_4px,rgba(30,34,40,0.02)_0_16px_8px,rgba(30,34,40,0.03)_0_32px_16px]">
-                <img class="!rounded-[.8rem]" src="./assets/img/photos/ma6.jpg"
-                  srcset="./assets/img/photos/ma6@2x.jpg 2x" alt="" />
+                <img class="!rounded-[.8rem]" src="./assets/img/photos/bb-hero.png" alt="" />
               </figure>
             </div>
             <div class="swiper-slide">
               <figure
                 class="!rounded-[0.8rem] shadow-[rgba(30,34,40,0.02)_0_2px_1px,rgba(30,34,40,0.02)_0_4px_2px,rgba(30,34,40,0.02)_0_8px_4px,rgba(30,34,40,0.02)_0_16px_8px,rgba(30,34,40,0.03)_0_32px_16px]">
-                <img class="!rounded-[.8rem]" src="./assets/img/photos/ma7.jpg"
-                  srcset="./assets/img/photos/ma7@2x.jpg 2x" alt="" />
+                <img class="!rounded-[.8rem]" src="./assets/img/photos/bb-hero.png" alt="" />
               </figure>
             </div>
           </div>
@@ -992,13 +1062,13 @@
             </div>
             <h2
               class="!text-[calc(1.345rem_+_1.14vw)] font-bold !leading-[1.2] xl:!text-[2.2rem] !mb-3 !text-center xxl:!px-8">
-              Functional, impressive and rich demos to start with</h2>
+              Legendary Price Mistakes & Glitches to Digest</h2>
           </div>
           <!-- /column -->
         </div>
         <!-- /.row -->
         <div class="demos-wrapper !text-center !mb-24 xl:!mb-[8rem] lg:!mb-[8rem] md:!mb-[8rem]">
-          <h2 class="!text-[0.85rem] !tracking-[.02rem] !leading-[1.35] uppercase !text-[#aab0bc] !mb-6">New Demos</h2>
+          <h2 class="!text-[0.85rem] !tracking-[.02rem] !leading-[1.35] uppercase !text-[#aab0bc] !mb-6">Latest</h2>
           <div class="flex flex-wrap mx-[-15px] !mb-10 xl:mx-[-20px] lg:mx-[-20px] md:mx-[-20px] !mt-[-70px]">
             <div
               class="md:w-6/12 lg:w-4/12 xl:w-4/12 w-full flex-[0_0_auto] !px-[15px] max-w-full xl:!px-[20px] lg:!px-[20px] md:!px-[20px] !mt-[70px]">
@@ -1155,27 +1225,38 @@
             <!-- /column -->
             <div
               class="md:w-6/12 lg:w-4/12 xl:w-4/12 w-full flex-[0_0_auto] !px-[15px] max-w-full xl:!px-[20px] lg:!px-[20px] md:!px-[20px] !mt-[70px] hidden xl:!flex lg:!flex md:!flex items-center justify-center flex-col">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 245.36"
-                data-inject-url="https://sandbox-tailwind-template.netlify.app/assets/img/icons/solid/layers.svg"
-                class="svg-inject icon-svg !w-[2.2rem] !h-[2.2rem]  solid-duo text-grape-fuchsia xl:!mt-[-2.5rem] lg:!mt-[-2.5rem] md:!mt-[-2.5rem] mb-4">
-                <path class="fill-primary"
-                  d="M128 117.36a7.92 7.92 0 01-3.1-.63L4.9 66.06a8 8 0 010-14.75L124.9.64a7.9 7.9 0 016.22 0l120 50.67a8 8 0 010 14.75l-120 50.67a7.92 7.92 0 01-3.12.63zm123.1 19.29l-12.49-5.28-101.28 42.75a24 24 0 01-18.69 0L17.39 131.36l-12.51 5.28a8 8 0 000 14.75l120 50.67a8.06 8.06 0 006.2 0l120-50.67a8 8 0 000-14.74z">
-                </path>
-                <path class="fill-secondary"
-                  d="M251.1 94l-12.49-5.3-101.28 42.75a24 24 0 01-18.69 0L17.39 88.68 4.88 94a8 8 0 000 14.77l120 50.67a7.94 7.94 0 006.2 0l120-50.67a8 8 0 000-14.75zm0 85.31L238.61 174l-101.28 42.78a23.66 23.66 0 01-9.33 1.9 23.91 23.91 0 01-9.36-1.9L17.39 174l-12.51 5.31a8 8 0 000 14.75l120 50.67a7.94 7.94 0 006.2 0l120-50.67a8 8 0 000-14.75z">
-                </path>
-              </svg>
-              <h3 class="!text-[0.85rem] !tracking-[0.02rem] uppercase !text-[#aab0bc] !mb-4">Scroll for more</h3>
+              <div class="xl:!mt-[-2.5rem] lg:!mt-[-2.5rem] md:!mt-[-2.5rem] mb-4" style="display:flex; flex-direction:column; align-items:center; justify-content:center;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="34" viewBox="0 0 15.527 20">
+                  <defs>
+                    <linearGradient id="bGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" style="stop-color:#4a3db5">
+                        <animate attributeName="stop-color" values="#4a3db5;#e668b3;#e8a04c;#4a3db5" dur="4s" repeatCount="indefinite"/>
+                      </stop>
+                      <stop offset="50%" style="stop-color:#e668b3">
+                        <animate attributeName="stop-color" values="#e668b3;#e8a04c;#4a3db5;#e668b3" dur="4s" repeatCount="indefinite"/>
+                      </stop>
+                      <stop offset="100%" style="stop-color:#e8a04c">
+                        <animate attributeName="stop-color" values="#e8a04c;#4a3db5;#e668b3;#e8a04c" dur="4s" repeatCount="indefinite"/>
+                      </stop>
+                    </linearGradient>
+                  </defs>
+                  <path d="M-15.421,49.732l.8-.354V43.346l-2.736-3.5H-30.884v20c.08,0,.16,0,.239,0q6.666,0,13.332,0a.638.638,0,0,0,.467-.18c.28-.254.58-.484.87-.726s.577-.488.866-.732.558-.466.837-.7l.388-.325V51.637Zm-5.292,5.878-.023.024a.037.037,0,0,1-.018.011,1.192,1.192,0,0,1-.129.011l-3.671-.006c-.013,0-.025-.012-.038-.019-.035-.16-.047-3.6-.014-3.9l.016-.015a.044.044,0,0,1,.018-.011c.043,0,.086-.01.129-.01l3.671.005c.013,0,.025.011.058.026Zm.006-8.158a.357.357,0,0,1-.028.029c-.005,0-.012.012-.017.012l-3.757.006a.77.77,0,0,1-.1-.014V44.066c.166-.039,3.545-.052,3.892-.015.023.565.007,1.133.01,1.7S-20.707,46.895-20.707,47.453Z" transform="translate(30.884 -39.842)" fill="url(#bGrad)"/>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#605dba" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="animation: bounceArrow 1.5s ease-in-out infinite; margin-top: 8px; display:block;">
+                  <path d="M12 5v14"/>
+                  <path d="M19 12l-7 7-7-7"/>
+                </svg>
+              </div>
+              <h3 class="!text-[0.85rem] !tracking-[0.02rem] uppercase !text-[#aab0bc] !mb-4">CHECK OUT THE GLITCHES TOO</h3>
               <a href="#prev-demos"
-                class="btn btn-lg btn-grape !text-white !bg-[#605dba] border-[#605dba] hover:text-white hover:bg-[#605dba] hover:!border-[#605dba]   active:text-white active:bg-[#605dba] active:border-[#605dba] disabled:text-white disabled:bg-[#605dba] disabled:border-[#605dba] btn-icon btn-icon-end !rounded-[0.8rem] mx-1 scroll">Previous
-                Demos <i class="uil uil-arrow-down-right before:content-['\e944'] !ml-[0.3rem]"></i></a>
+                class="btn btn-lg btn-grape !text-white !bg-[#605dba] border-[#605dba] hover:text-white hover:bg-[#605dba] hover:!border-[#605dba]   active:text-white active:bg-[#605dba] active:border-[#605dba] disabled:text-white disabled:bg-[#605dba] disabled:border-[#605dba] btn-icon btn-icon-end !rounded-[0.8rem] mx-1 scroll">See Glitches <i class="uil uil-arrow-down-right before:content-['\e944'] !ml-[0.3rem]"></i></a>
             </div>
             <!-- /column -->
           </div>
           <!-- /.row -->
           <h2
             class="!text-[0.85rem] !tracking-[.02rem] !leading-[1.35] uppercase !text-[#aab0bc] pt-24 !mt-[-2rem] !mb-6"
-            id="prev-demos">Previous Demos</h2>
+            id="prev-demos">Glitches</h2>
           <div class="flex flex-wrap mx-[-15px] !mb-10 xl:mx-[-20px] lg:mx-[-20px] md:mx-[-20px] !mt-[-70px]">
             <div
               class="md:w-6/12 lg:w-4/12 xl:w-4/12 w-full flex-[0_0_auto] !px-[15px] max-w-full xl:!px-[20px] lg:!px-[20px] md:!px-[20px] !mt-[70px]">
@@ -1547,7 +1628,7 @@
           <div class="md:w-11/12 lg:w-10/12 xl:w-8/12 xxl:w-7/12 w-full flex-[0_0_auto] !px-[15px] max-w-full !mx-auto">
             <h2
               class="!text-[calc(1.345rem_+_1.14vw)] font-bold !leading-[1.2] xl:!text-[2.2rem]  !mb-0 lg:!px-10 xl:!px-0">
-              Build your website using the powerful features of Sandbox</h2>
+              As Mentioned In...</h2>
           </div>
           <!-- /column -->
         </div>
@@ -1560,51 +1641,84 @@
           <div class="swiper overflow-visible">
             <div class="swiper-wrapper">
               <div class="swiper-slide">
+                <a href="https://m.youtube.com/watch?v=dcjuJAT5_5U" target="_blank" style="display:block;">
                 <figure
                   class="!rounded-[0.8rem] shadow-[rgba(30,34,40,0.02)_0_2px_1px,rgba(30,34,40,0.02)_0_4px_2px,rgba(30,34,40,0.02)_0_8px_4px,rgba(30,34,40,0.02)_0_16px_8px,rgba(30,34,40,0.03)_0_32px_16px]">
-                  <img class="!rounded-[.8rem]" src="./assets/img/photos/bp1.jpg"
-                    srcset="./assets/img/photos/bp1@2x.jpg 2x" alt="" />
+                  <img class="!rounded-[.8rem]" src="./assets/img/photos/dexerto-feature.png" alt="Dexerto Feature" />
                 </figure>
+                </a>
               </div>
               <!--/.swiper-slide -->
               <div class="swiper-slide">
+                <a href="https://firstsportz.com/esports-news-dillon-danis-trolls-logan-paul-and-ksi-for-accidentally-giving-away-over-2250000-worth-of-boxes-of-prime-hydration-sticks-for-free/" target="_blank" style="display:block;">
                 <figure
                   class="!rounded-[0.8rem] shadow-[rgba(30,34,40,0.02)_0_2px_1px,rgba(30,34,40,0.02)_0_4px_2px,rgba(30,34,40,0.02)_0_8px_4px,rgba(30,34,40,0.02)_0_16px_8px,rgba(30,34,40,0.03)_0_32px_16px]">
-                  <img class="!rounded-[.8rem]" src="./assets/img/photos/bp2.jpg"
-                    srcset="./assets/img/photos/bp2@2x.jpg 2x" alt="" />
+                  <img class="!rounded-[.8rem]" src="./assets/img/photos/firstsportz-feature.png" alt="FirstSportz Feature" />
                 </figure>
+                </a>
               </div>
               <!--/.swiper-slide -->
               <div class="swiper-slide">
+                <a href="https://thesportsrush.com/ufc-news-boxing-after-2000000-mishap-dillon-danis-trolls-logan-paul-ksi-with-three-words/" target="_blank" style="display:block;">
                 <figure
                   class="!rounded-[0.8rem] shadow-[rgba(30,34,40,0.02)_0_2px_1px,rgba(30,34,40,0.02)_0_4px_2px,rgba(30,34,40,0.02)_0_8px_4px,rgba(30,34,40,0.02)_0_16px_8px,rgba(30,34,40,0.03)_0_32px_16px]">
-                  <img class="!rounded-[.8rem]" src="./assets/img/photos/bp3.jpg"
-                    srcset="./assets/img/photos/bp3@2x.jpg 2x" alt="" />
+                  <img class="!rounded-[.8rem]" src="./assets/img/photos/sportsrush-feature.png" alt="The Sports Rush Feature" />
                 </figure>
+                </a>
               </div>
               <!--/.swiper-slide -->
               <div class="swiper-slide">
+                <a href="https://meaww.com/internet-calls-dillon-danis-irrelevant-as-he-mocks-logan-paul-and-ks-is-prime-hydration-for-mistake-that-cost-over-2-m" target="_blank" style="display:block;">
                 <figure
                   class="!rounded-[0.8rem] shadow-[rgba(30,34,40,0.02)_0_2px_1px,rgba(30,34,40,0.02)_0_4px_2px,rgba(30,34,40,0.02)_0_8px_4px,rgba(30,34,40,0.02)_0_16px_8px,rgba(30,34,40,0.03)_0_32px_16px]">
-                  <img class="!rounded-[.8rem]" src="./assets/img/photos/bp4.jpg"
-                    srcset="./assets/img/photos/bp4@2x.jpg 2x" alt="" />
+                  <img class="!rounded-[.8rem]" src="./assets/img/photos/meaww-feature.png" alt="MEAWW Feature" />
                 </figure>
+                </a>
               </div>
               <!--/.swiper-slide -->
               <div class="swiper-slide">
+                <a href="https://www.sportskeeda.com/mma/news-dillon-danis-trolls-bone-heads-ksi-logan-paul-prime-hydration-brand-accidentally-gives-away-250-000-boxes-products-free" target="_blank" style="display:block;">
                 <figure
                   class="!rounded-[0.8rem] shadow-[rgba(30,34,40,0.02)_0_2px_1px,rgba(30,34,40,0.02)_0_4px_2px,rgba(30,34,40,0.02)_0_8px_4px,rgba(30,34,40,0.02)_0_16px_8px,rgba(30,34,40,0.03)_0_32px_16px]">
-                  <img class="!rounded-[.8rem]" src="./assets/img/photos/bp5.jpg"
-                    srcset="./assets/img/photos/bp5@2x.jpg 2x" alt="" />
+                  <img class="!rounded-[.8rem]" src="./assets/img/photos/sportskeeda-feature.png" alt="Sportskeeda Feature" />
                 </figure>
+                </a>
               </div>
               <!--/.swiper-slide -->
               <div class="swiper-slide">
+                <a href="https://m.youtube.com/watch?v=dcjuJAT5_5U" target="_blank" style="display:block;">
                 <figure
                   class="!rounded-[0.8rem] shadow-[rgba(30,34,40,0.02)_0_2px_1px,rgba(30,34,40,0.02)_0_4px_2px,rgba(30,34,40,0.02)_0_8px_4px,rgba(30,34,40,0.02)_0_16px_8px,rgba(30,34,40,0.03)_0_32px_16px]">
-                  <img class="!rounded-[.8rem]" src="./assets/img/photos/bp6.jpg"
-                    srcset="./assets/img/photos/bp6@2x.jpg 2x" alt="" />
+                  <img class="!rounded-[.8rem]" src="./assets/img/photos/dexerto-feature.png" alt="Dexerto Feature" />
                 </figure>
+                </a>
+              </div>
+              <!--/.swiper-slide -->
+              <div class="swiper-slide">
+                <a href="https://firstsportz.com/esports-news-dillon-danis-trolls-logan-paul-and-ksi-for-accidentally-giving-away-over-2250000-worth-of-boxes-of-prime-hydration-sticks-for-free/" target="_blank" style="display:block;">
+                <figure
+                  class="!rounded-[0.8rem] shadow-[rgba(30,34,40,0.02)_0_2px_1px,rgba(30,34,40,0.02)_0_4px_2px,rgba(30,34,40,0.02)_0_8px_4px,rgba(30,34,40,0.02)_0_16px_8px,rgba(30,34,40,0.03)_0_32px_16px]">
+                  <img class="!rounded-[.8rem]" src="./assets/img/photos/firstsportz-feature.png" alt="FirstSportz Feature" />
+                </figure>
+                </a>
+              </div>
+              <!--/.swiper-slide -->
+              <div class="swiper-slide">
+                <a href="https://thesportsrush.com/ufc-news-boxing-after-2000000-mishap-dillon-danis-trolls-logan-paul-ksi-with-three-words/" target="_blank" style="display:block;">
+                <figure
+                  class="!rounded-[0.8rem] shadow-[rgba(30,34,40,0.02)_0_2px_1px,rgba(30,34,40,0.02)_0_4px_2px,rgba(30,34,40,0.02)_0_8px_4px,rgba(30,34,40,0.02)_0_16px_8px,rgba(30,34,40,0.03)_0_32px_16px]">
+                  <img class="!rounded-[.8rem]" src="./assets/img/photos/sportsrush-feature.png" alt="The Sports Rush Feature" />
+                </figure>
+                </a>
+              </div>
+              <!--/.swiper-slide -->
+              <div class="swiper-slide">
+                <a href="https://www.sportskeeda.com/mma/news-dillon-danis-trolls-bone-heads-ksi-logan-paul-prime-hydration-brand-accidentally-gives-away-250-000-boxes-products-free" target="_blank" style="display:block;">
+                <figure
+                  class="!rounded-[0.8rem] shadow-[rgba(30,34,40,0.02)_0_2px_1px,rgba(30,34,40,0.02)_0_4px_2px,rgba(30,34,40,0.02)_0_8px_4px,rgba(30,34,40,0.02)_0_16px_8px,rgba(30,34,40,0.03)_0_32px_16px]">
+                  <img class="!rounded-[.8rem]" src="./assets/img/photos/sportskeeda-feature.png" alt="Sportskeeda Feature" />
+                </figure>
+                </a>
               </div>
               <!--/.swiper-slide -->
             </div>
@@ -1622,7 +1736,7 @@
             class="col xl:w-1/5 lg:w-1/5 md:w-3/12 w-6/12 flex-[0_0_auto] max-w-full !px-[15px] xl:!px-[20px] lg:!px-[20px] md:!px-[20px] !mt-[50px]">
             <img class="!mb-4 m-[0_auto]" src="./assets/img/demos/fi1.png" srcset="./assets/img/demos/fi1@2x.png 2x"
               alt="image">
-            <h4>Built with <br> tailwindcss</h4>
+            <h4>Built with <br> love </h4>
           </div>
           <!--/column -->
           <div
@@ -1791,7 +1905,7 @@
               Our top priority is ensuring customer satisfaction.</h2>
             <p class="lead !text-[1.1rem] !leading-[1.6] !mb-6">Don't take our word for it. Hear from customers about
               Sandbox.</p>
-            <a href="https://themeforest.net/item/sandbox-modern-multipurpose-tailwind-css-template/reviews/51340309"
+            <a href="https://whop.com/bandarsbounties"
               class="btn btn-lg btn-grape !text-white !bg-[#605dba] border-[#605dba] hover:text-white hover:bg-[#605dba] hover:!border-[#605dba]   active:text-white active:bg-[#605dba] active:border-[#605dba] disabled:text-white disabled:bg-[#605dba] disabled:border-[#605dba] btn-icon btn-icon-end !rounded-[0.8rem]"
               target="_blank">All Reviews <i
                 class="uil uil-arrow-up-right !ml-[.3rem] before:content-['\e950']"></i></a>
@@ -1819,9 +1933,9 @@
                 thousands of clients. Join them now and easily create your stunning website in no time.</p>
             </div>
             <div class="flex justify-center">
-              <span><a href="https://themeforest.net/item/sandbox-modern-multipurpose-tailwind-css-template/51340309"
+              <span><a href="https://whop.com/bandarsbounties"
                   class="btn btn-lg btn-grape !text-white !bg-[#605dba] border-[#605dba] hover:text-white hover:bg-[#605dba] hover:!border-[#605dba]   active:text-white active:bg-[#605dba] active:border-[#605dba] disabled:text-white disabled:bg-[#605dba] disabled:border-[#605dba] btn-icon btn-icon-end !rounded-[0.8rem]"
-                  target="_blank">Buy Sandbox <i
+                  target="_blank">Join Bandar's Bounties <i
                     class="uil uil-arrow-up-right !ml-[.3rem] before:content-['\e950']"></i></a></span>
             </div>
             <!-- /div -->
