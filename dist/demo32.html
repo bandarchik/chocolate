@@ -37,6 +37,19 @@
     .success-placeholder { background: linear-gradient(135deg, #f0f0f8 0%, #e8e8f0 100%); border: 2px dashed #c5c5d8; border-radius: 12px; padding: 40px 20px; text-align: center; color: #959ca9; font-weight: 600; min-height: 220px; display: flex; flex-direction: column; align-items: center; justify-content: center; transition: all 0.3s ease; }
     .success-placeholder:hover { border-color: #605dba; color: #605dba; }
     .success-placeholder i { font-size: 2.5rem; margin-bottom: 10px; opacity: 0.5; }
+    .img-swiper { position: relative; z-index: 1; padding-bottom: 8px; padding-right: 8px; }
+    .img-swiper::before, .img-swiper::after { content: ''; position: absolute; background: linear-gradient(135deg, #e8e8f0 0%, #dddde8 100%); border: 2px dashed #d0d0dc; border-radius: 12px; pointer-events: none; }
+    .img-swiper::before { top: 4px; left: 4px; right: -4px; bottom: -4px; z-index: -1; opacity: 0.7; }
+    .img-swiper::after { top: 8px; left: 8px; right: -8px; bottom: -8px; z-index: -2; opacity: 0.4; }
+    .img-swiper .swiper-container { border-radius: 12px; overflow: hidden; }
+    .img-swiper .swiper-slide .success-placeholder { min-height: 220px; margin: 0; border-radius: 12px; }
+    .img-swiper .swiper-pagination { position: relative !important; margin-top: 8px; }
+    .img-swiper .swiper-pagination-bullet { background: #959ca9; }
+    .img-swiper .swiper-pagination-bullet-active { background: #605dba; }
+    .img-swiper .swiper-controls { display: none; }
+    .img-swiper .success-placeholder img { width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; border-radius: 12px; }
+    .img-swiper .success-placeholder.has-img { padding: 0; position: relative; overflow: hidden; }
+    .img-swiper .success-placeholder.has-img span, .img-swiper .success-placeholder.has-img i, .img-swiper .success-placeholder.has-img small { display: none; }
     .article-hero { background: linear-gradient(135deg, #e21a2cdd 0%, #000000dd 100%); padding: 120px 0 60px; }
     .article-meta { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
     .article-tag { background: rgba(255,255,255,0.2); color: #fff; padding: 4px 14px; border-radius: 20px; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; }
@@ -847,9 +860,14 @@
             </div>
           </div>
           <div class="col-lg-5 !mt-6 lg:!mt-0">
-            <div class="success-placeholder" style="min-height:200px; background:rgba(255,255,255,0.1); border-color:rgba(255,255,255,0.3);">
-              <i class="uil uil-image-v before:content-['\eb53'] !text-white"></i>
-              <span class="!text-white/80">Hero Image</span>
+            <div class="img-swiper" style="--stack-bg: rgba(255,255,255,0.05);">
+            <div class="swiper-container" data-items="1" data-dots="true" data-nav="false" data-margin="0" data-autoplay="false" style="border-radius:12px; overflow:hidden;">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide"><div class="success-placeholder" style="min-height:200px; background:rgba(255,255,255,0.1); border-color:rgba(255,255,255,0.3);"><i class="uil uil-image-v before:content-['\eb53'] !text-white"></i><span class="!text-white/80">Hero Image #1</span></div></div>
+                <div class="swiper-slide"><div class="success-placeholder" style="min-height:200px; background:rgba(255,255,255,0.1); border-color:rgba(255,255,255,0.3);"><i class="uil uil-image-v before:content-['\eb53'] !text-white"></i><span class="!text-white/80">Hero Image #2</span></div></div>
+                <div class="swiper-slide"><div class="success-placeholder" style="min-height:200px; background:rgba(255,255,255,0.1); border-color:rgba(255,255,255,0.3);"><i class="uil uil-image-v before:content-['\eb53'] !text-white"></i><span class="!text-white/80">Hero Image #3</span></div></div>
+              </div>
+            </div>
             </div>
           </div>
         </div>
@@ -866,15 +884,119 @@
                 <p class="!mb-0">"Returning users received discounts meant for refunds"</p>
               </div>
               <p class="!text-[#60697b] !leading-relaxed !mb-6">Bandar's Bounties detected the crossed signals at <strong>4:10 PM EST</strong> when members reported massive discounts appearing on previously abandoned carts. The team found the trigger: leave items in cart, wait 2+ hours, return.</p>
-              <div class="success-placeholder !mb-8" style="min-height:180px;">
-                <i class="uil uil-image-v before:content-['\eb53']"></i><span>Screenshot of the pricing error</span>
+              <div class="!mb-8">
+              <div class="img-swiper ">
+            <div class="swiper-container" data-items="1" data-dots="true" data-nav="false" data-margin="0" data-autoplay="false">
+              <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="success-placeholder" style="min-height:180px;">
+                  <i class="uil uil-image-v before:content-['\eb53']"></i>
+                  <span>Screenshot of glitched price</span>
+                  <small class="!mt-2 !text-[0.75rem] opacity-75">Swipe for more</small>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="success-placeholder" style="min-height:180px;">
+                  <i class="uil uil-image-v before:content-['\eb53']"></i>
+                  <span>Price comparison before/after</span>
+                  <small class="!mt-2 !text-[0.75rem] opacity-75">Swipe for more</small>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="success-placeholder" style="min-height:180px;">
+                  <i class="uil uil-image-v before:content-['\eb53']"></i>
+                  <span>Product page screenshot</span>
+                  <small class="!mt-2 !text-[0.75rem] opacity-75">Swipe for more</small>
+                </div>
+              </div>
+              </div>
+            </div>
+          </div>
               </div>
               <h2 class="!text-[1.5rem] !font-bold !mb-4">The Checkout Rush</h2>
               <p class="!text-[#60697b] !leading-relaxed !mb-6">Members strategically abandoned carts loaded with designer clothing, home goods, jewelry, and kitchen appliances, then returned after 2 hours to claim the refund-level discounts. The system applied 40-50% off the entire cart automatically.</p>
               <div class="img-grid-3 !mb-8">
-                <div class="success-placeholder" style="min-height:160px;"><i class="uil uil-image-v before:content-['\eb53']"></i><span>Success #1</span></div>
-                <div class="success-placeholder" style="min-height:160px;"><i class="uil uil-image-v before:content-['\eb53']"></i><span>Success #2</span></div>
-                <div class="success-placeholder" style="min-height:160px;"><i class="uil uil-image-v before:content-['\eb53']"></i><span>Success #3</span></div>
+                <div class="img-swiper ">
+            <div class="swiper-container" data-items="1" data-dots="true" data-nav="false" data-margin="0" data-autoplay="false">
+              <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="success-placeholder" style="min-height:160px;">
+                  <i class="uil uil-image-v before:content-['\eb53']"></i>
+                  <span>Order confirmation #1</span>
+                  <small class="!mt-2 !text-[0.75rem] opacity-75">Swipe for more</small>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="success-placeholder" style="min-height:160px;">
+                  <i class="uil uil-image-v before:content-['\eb53']"></i>
+                  <span>Order confirmation #2</span>
+                  <small class="!mt-2 !text-[0.75rem] opacity-75">Swipe for more</small>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="success-placeholder" style="min-height:160px;">
+                  <i class="uil uil-image-v before:content-['\eb53']"></i>
+                  <span>Cart screenshot</span>
+                  <small class="!mt-2 !text-[0.75rem] opacity-75">Swipe for more</small>
+                </div>
+              </div>
+              </div>
+            </div>
+          </div>
+                <div class="img-swiper ">
+            <div class="swiper-container" data-items="1" data-dots="true" data-nav="false" data-margin="0" data-autoplay="false">
+              <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="success-placeholder" style="min-height:160px;">
+                  <i class="uil uil-image-v before:content-['\eb53']"></i>
+                  <span>Shipping notification</span>
+                  <small class="!mt-2 !text-[0.75rem] opacity-75">Swipe for more</small>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="success-placeholder" style="min-height:160px;">
+                  <i class="uil uil-image-v before:content-['\eb53']"></i>
+                  <span>Tracking update</span>
+                  <small class="!mt-2 !text-[0.75rem] opacity-75">Swipe for more</small>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="success-placeholder" style="min-height:160px;">
+                  <i class="uil uil-image-v before:content-['\eb53']"></i>
+                  <span>Out for delivery</span>
+                  <small class="!mt-2 !text-[0.75rem] opacity-75">Swipe for more</small>
+                </div>
+              </div>
+              </div>
+            </div>
+          </div>
+                <div class="img-swiper ">
+            <div class="swiper-container" data-items="1" data-dots="true" data-nav="false" data-margin="0" data-autoplay="false">
+              <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="success-placeholder" style="min-height:160px;">
+                  <i class="uil uil-image-v before:content-['\eb53']"></i>
+                  <span>Package arrival #1</span>
+                  <small class="!mt-2 !text-[0.75rem] opacity-75">Swipe for more</small>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="success-placeholder" style="min-height:160px;">
+                  <i class="uil uil-image-v before:content-['\eb53']"></i>
+                  <span>Package arrival #2</span>
+                  <small class="!mt-2 !text-[0.75rem] opacity-75">Swipe for more</small>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="success-placeholder" style="min-height:160px;">
+                  <i class="uil uil-image-v before:content-['\eb53']"></i>
+                  <span>Unboxing photo</span>
+                  <small class="!mt-2 !text-[0.75rem] opacity-75">Swipe for more</small>
+                </div>
+              </div>
+              </div>
+            </div>
+          </div>
               </div>
               <h2 class="!text-[1.5rem] !font-bold !mb-4">Did They Ship?</h2>
               <p class="!text-[#60697b] !leading-relaxed !mb-6">Macy's identified the cross-wired system during evening IT review and corrected it by 10 PM. All orders placed with the erroneous cart discounts were honored &mdash; Macy's treated them as legitimate promotional offers.</p>

@@ -37,6 +37,19 @@
     .success-placeholder { background: linear-gradient(135deg, #f0f0f8 0%, #e8e8f0 100%); border: 2px dashed #c5c5d8; border-radius: 12px; padding: 40px 20px; text-align: center; color: #959ca9; font-weight: 600; min-height: 220px; display: flex; flex-direction: column; align-items: center; justify-content: center; transition: all 0.3s ease; }
     .success-placeholder:hover { border-color: #605dba; color: #605dba; }
     .success-placeholder i { font-size: 2.5rem; margin-bottom: 10px; opacity: 0.5; }
+    .img-swiper { position: relative; z-index: 1; padding-bottom: 8px; padding-right: 8px; }
+    .img-swiper::before, .img-swiper::after { content: ''; position: absolute; background: linear-gradient(135deg, #e8e8f0 0%, #dddde8 100%); border: 2px dashed #d0d0dc; border-radius: 12px; pointer-events: none; }
+    .img-swiper::before { top: 4px; left: 4px; right: -4px; bottom: -4px; z-index: -1; opacity: 0.7; }
+    .img-swiper::after { top: 8px; left: 8px; right: -8px; bottom: -8px; z-index: -2; opacity: 0.4; }
+    .img-swiper .swiper-container { border-radius: 12px; overflow: hidden; }
+    .img-swiper .swiper-slide .success-placeholder { min-height: 220px; margin: 0; border-radius: 12px; }
+    .img-swiper .swiper-pagination { position: relative !important; margin-top: 8px; }
+    .img-swiper .swiper-pagination-bullet { background: #959ca9; }
+    .img-swiper .swiper-pagination-bullet-active { background: #605dba; }
+    .img-swiper .swiper-controls { display: none; }
+    .img-swiper .success-placeholder img { width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; border-radius: 12px; }
+    .img-swiper .success-placeholder.has-img { padding: 0; position: relative; overflow: hidden; }
+    .img-swiper .success-placeholder.has-img span, .img-swiper .success-placeholder.has-img i, .img-swiper .success-placeholder.has-img small { display: none; }
     .article-hero { background: linear-gradient(135deg, #ff6600 0%, #1a1a2e 100%); padding: 120px 0 60px; }
     .article-meta { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
     .article-tag { background: rgba(255,255,255,0.2); color: #fff; padding: 4px 14px; border-radius: 20px; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; }
@@ -855,10 +868,34 @@
         <div class="row justify-center">
           <div class="col-lg-10 col-xl-8">
             <div class="card !rounded-[1rem] !shadow-lg !border-0 !p-6 md:!p-10 !mb-8">
-              <div class="success-placeholder !mb-8" style="min-height:200px;">
-                <i class="uil uil-image-v before:content-['\eb53']"></i>
-                <span>Hero Image: Newegg Auto-Reprice Failure</span>
-                <small class="!mt-2 !text-[0.75rem] opacity-75">Replace with screenshot of the glitched listing</small>
+              <div class="!mb-8">
+              <div class="img-swiper ">
+            <div class="swiper-container" data-items="1" data-dots="true" data-nav="false" data-margin="0" data-autoplay="false">
+              <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="success-placeholder" style="min-height:200px;">
+                  <i class="uil uil-image-v before:content-['\eb53']"></i>
+                  <span>Glitched listing screenshot</span>
+                  <small class="!mt-2 !text-[0.75rem] opacity-75">Swipe for more</small>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="success-placeholder" style="min-height:200px;">
+                  <i class="uil uil-image-v before:content-['\eb53']"></i>
+                  <span>Price comparison view</span>
+                  <small class="!mt-2 !text-[0.75rem] opacity-75">Swipe for more</small>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="success-placeholder" style="min-height:200px;">
+                  <i class="uil uil-image-v before:content-['\eb53']"></i>
+                  <span>Cart total screenshot</span>
+                  <small class="!mt-2 !text-[0.75rem] opacity-75">Swipe for more</small>
+                </div>
+              </div>
+              </div>
+            </div>
+          </div>
               </div>
               <div class="row !mb-8 g-4">
                 <div class="col-4"><div class="stat-card"><div class="stat-number">85%</div><div class="stat-label !text-[#60697b] !text-[0.75rem] md:!text-[0.85rem] !font-semibold">Off Retail</div></div></div>
@@ -875,10 +912,114 @@
               <h2 class="!text-[1.5rem] !font-bold !mb-4">Members Moved Fast</h2>
               <p class="!text-[#60697b] !leading-relaxed !mb-6">PC builders went wild. Members ordered complete high-end builds at budget prices &mdash; RTX 4090s, Ryzen 9 7950X3D processors, DDR5 RAM kits, and premium cases. Some built $5,000 gaming PCs for under $500 total.</p>
               <div class="success-grid !mb-8">
-                <div class="success-placeholder"><i class="uil uil-image-v before:content-['\eb53']"></i><span>Member Success #1</span><small class="!mt-2 !text-[0.75rem] opacity-75">Order confirmation</small></div>
-                <div class="success-placeholder"><i class="uil uil-image-v before:content-['\eb53']"></i><span>Member Success #2</span><small class="!mt-2 !text-[0.75rem] opacity-75">Shipping notification</small></div>
-                <div class="success-placeholder"><i class="uil uil-image-v before:content-['\eb53']"></i><span>Member Success #3</span><small class="!mt-2 !text-[0.75rem] opacity-75">Delivery photo</small></div>
-                <div class="success-placeholder"><i class="uil uil-image-v before:content-['\eb53']"></i><span>Member Success #4</span><small class="!mt-2 !text-[0.75rem] opacity-75">Unboxing haul</small></div>
+                <div class="img-swiper ">
+            <div class="swiper-container" data-items="1" data-dots="true" data-nav="false" data-margin="0" data-autoplay="false">
+              <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="success-placeholder" style="min-height:220px;">
+                  <i class="uil uil-image-v before:content-['\eb53']"></i>
+                  <span>Order confirmation #1</span>
+                  <small class="!mt-2 !text-[0.75rem] opacity-75">Swipe for more</small>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="success-placeholder" style="min-height:220px;">
+                  <i class="uil uil-image-v before:content-['\eb53']"></i>
+                  <span>Order confirmation #2</span>
+                  <small class="!mt-2 !text-[0.75rem] opacity-75">Swipe for more</small>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="success-placeholder" style="min-height:220px;">
+                  <i class="uil uil-image-v before:content-['\eb53']"></i>
+                  <span>Order confirmation #3</span>
+                  <small class="!mt-2 !text-[0.75rem] opacity-75">Swipe for more</small>
+                </div>
+              </div>
+              </div>
+            </div>
+          </div>
+                <div class="img-swiper ">
+            <div class="swiper-container" data-items="1" data-dots="true" data-nav="false" data-margin="0" data-autoplay="false">
+              <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="success-placeholder" style="min-height:220px;">
+                  <i class="uil uil-image-v before:content-['\eb53']"></i>
+                  <span>Shipping notification #1</span>
+                  <small class="!mt-2 !text-[0.75rem] opacity-75">Swipe for more</small>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="success-placeholder" style="min-height:220px;">
+                  <i class="uil uil-image-v before:content-['\eb53']"></i>
+                  <span>Shipping notification #2</span>
+                  <small class="!mt-2 !text-[0.75rem] opacity-75">Swipe for more</small>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="success-placeholder" style="min-height:220px;">
+                  <i class="uil uil-image-v before:content-['\eb53']"></i>
+                  <span>Tracking screenshot</span>
+                  <small class="!mt-2 !text-[0.75rem] opacity-75">Swipe for more</small>
+                </div>
+              </div>
+              </div>
+            </div>
+          </div>
+                <div class="img-swiper ">
+            <div class="swiper-container" data-items="1" data-dots="true" data-nav="false" data-margin="0" data-autoplay="false">
+              <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="success-placeholder" style="min-height:220px;">
+                  <i class="uil uil-image-v before:content-['\eb53']"></i>
+                  <span>Delivery photo #1</span>
+                  <small class="!mt-2 !text-[0.75rem] opacity-75">Swipe for more</small>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="success-placeholder" style="min-height:220px;">
+                  <i class="uil uil-image-v before:content-['\eb53']"></i>
+                  <span>Delivery photo #2</span>
+                  <small class="!mt-2 !text-[0.75rem] opacity-75">Swipe for more</small>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="success-placeholder" style="min-height:220px;">
+                  <i class="uil uil-image-v before:content-['\eb53']"></i>
+                  <span>Delivery photo #3</span>
+                  <small class="!mt-2 !text-[0.75rem] opacity-75">Swipe for more</small>
+                </div>
+              </div>
+              </div>
+            </div>
+          </div>
+                <div class="img-swiper ">
+            <div class="swiper-container" data-items="1" data-dots="true" data-nav="false" data-margin="0" data-autoplay="false">
+              <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="success-placeholder" style="min-height:220px;">
+                  <i class="uil uil-image-v before:content-['\eb53']"></i>
+                  <span>Unboxing haul #1</span>
+                  <small class="!mt-2 !text-[0.75rem] opacity-75">Swipe for more</small>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="success-placeholder" style="min-height:220px;">
+                  <i class="uil uil-image-v before:content-['\eb53']"></i>
+                  <span>Unboxing haul #2</span>
+                  <small class="!mt-2 !text-[0.75rem] opacity-75">Swipe for more</small>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="success-placeholder" style="min-height:220px;">
+                  <i class="uil uil-image-v before:content-['\eb53']"></i>
+                  <span>Full haul spread</span>
+                  <small class="!mt-2 !text-[0.75rem] opacity-75">Swipe for more</small>
+                </div>
+              </div>
+              </div>
+            </div>
+          </div>
               </div>
               <h2 class="!text-[1.5rem] !font-bold !mb-4">The Outcome</h2>
               <p class="!text-[#60697b] !leading-relaxed !mb-6">Newegg's engineering team finally restarted the pricing engine at 6 AM, but all orders placed at flash sale prices were confirmed and fulfilled. Shipping began the same day, and members received their components within the week.</p>

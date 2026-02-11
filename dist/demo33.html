@@ -37,6 +37,19 @@
     .success-placeholder { background: linear-gradient(135deg, #f0f0f8 0%, #e8e8f0 100%); border: 2px dashed #c5c5d8; border-radius: 12px; padding: 40px 20px; text-align: center; color: #959ca9; font-weight: 600; min-height: 220px; display: flex; flex-direction: column; align-items: center; justify-content: center; transition: all 0.3s ease; }
     .success-placeholder:hover { border-color: #605dba; color: #605dba; }
     .success-placeholder i { font-size: 2.5rem; margin-bottom: 10px; opacity: 0.5; }
+    .img-swiper { position: relative; z-index: 1; padding-bottom: 8px; padding-right: 8px; }
+    .img-swiper::before, .img-swiper::after { content: ''; position: absolute; background: linear-gradient(135deg, #e8e8f0 0%, #dddde8 100%); border: 2px dashed #d0d0dc; border-radius: 12px; pointer-events: none; }
+    .img-swiper::before { top: 4px; left: 4px; right: -4px; bottom: -4px; z-index: -1; opacity: 0.7; }
+    .img-swiper::after { top: 8px; left: 8px; right: -8px; bottom: -8px; z-index: -2; opacity: 0.4; }
+    .img-swiper .swiper-container { border-radius: 12px; overflow: hidden; }
+    .img-swiper .swiper-slide .success-placeholder { min-height: 220px; margin: 0; border-radius: 12px; }
+    .img-swiper .swiper-pagination { position: relative !important; margin-top: 8px; }
+    .img-swiper .swiper-pagination-bullet { background: #959ca9; }
+    .img-swiper .swiper-pagination-bullet-active { background: #605dba; }
+    .img-swiper .swiper-controls { display: none; }
+    .img-swiper .success-placeholder img { width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; border-radius: 12px; }
+    .img-swiper .success-placeholder.has-img { padding: 0; position: relative; overflow: hidden; }
+    .img-swiper .success-placeholder.has-img span, .img-swiper .success-placeholder.has-img i, .img-swiper .success-placeholder.has-img small { display: none; }
     .article-hero { background: #ffffff; padding: 140px 0 40px; }
     .article-meta { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
     .article-tag { background: #000000; color: #fff; padding: 4px 14px; border-radius: 20px; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; }
@@ -863,16 +876,146 @@
             <p class="!text-[#60697b] !leading-relaxed !mb-6 !text-[1.05rem]">Zara's inventory system reversed its pricing logic on July 18, 2024 when <strong>newly restocked Fall collection items were tagged with outgoing Summer sale prices</strong>. Brand new arrivals that should have been full-price showed 60-70% markdowns meant for end-of-season clearance.</p>
             <p class="!text-[#60697b] !leading-relaxed !mb-6 !text-[1.05rem]">Bandar's Bounties caught the restock reversal at <strong>5:25 AM EST</strong> when new product listings appeared with sale tags despite being first-time additions to the site. The alert highlighted the best pieces from the incoming collection.</p>
             <hr class="divider">
-            <div class="success-placeholder !mb-8" style="min-height:200px;">
-              <i class="uil uil-image-v before:content-['\eb53']"></i><span>Featured Image</span>
+            <div class="!mb-8">
+            <div class="img-swiper ">
+            <div class="swiper-container" data-items="1" data-dots="true" data-nav="false" data-margin="0" data-autoplay="false">
+              <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="success-placeholder" style="min-height:200px;">
+                  <i class="uil uil-image-v before:content-['\eb53']"></i>
+                  <span>Glitched product page</span>
+                  <small class="!mt-2 !text-[0.75rem] opacity-75">Swipe for more</small>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="success-placeholder" style="min-height:200px;">
+                  <i class="uil uil-image-v before:content-['\eb53']"></i>
+                  <span>Price error screenshot</span>
+                  <small class="!mt-2 !text-[0.75rem] opacity-75">Swipe for more</small>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="success-placeholder" style="min-height:200px;">
+                  <i class="uil uil-image-v before:content-['\eb53']"></i>
+                  <span>Before vs. after pricing</span>
+                  <small class="!mt-2 !text-[0.75rem] opacity-75">Swipe for more</small>
+                </div>
+              </div>
+              </div>
+            </div>
+          </div>
             </div>
             <hr class="divider">
             <p class="!text-[#60697b] !leading-relaxed !mb-6 !text-[1.05rem]">Members ordered new-season blazers, coats, dresses, and premium basics at deep summer clearance prices. Zara's fast fashion model means these pieces would sell out within weeks at full price, making the early access at sale prices incredibly valuable.</p>
             <div class="masonry-grid !mb-8">
-              <div class="success-placeholder" style="min-height:180px;"><i class="uil uil-image-v before:content-['\eb53']"></i><span>Member Win #1</span></div>
-              <div class="success-placeholder" style="min-height:240px;"><i class="uil uil-image-v before:content-['\eb53']"></i><span>Member Win #2</span></div>
-              <div class="success-placeholder" style="min-height:240px;"><i class="uil uil-image-v before:content-['\eb53']"></i><span>Member Win #3</span></div>
-              <div class="success-placeholder" style="min-height:180px;"><i class="uil uil-image-v before:content-['\eb53']"></i><span>Member Win #4</span></div>
+              <div class="img-swiper ">
+            <div class="swiper-container" data-items="1" data-dots="true" data-nav="false" data-margin="0" data-autoplay="false">
+              <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="success-placeholder" style="min-height:180px;">
+                  <i class="uil uil-image-v before:content-['\eb53']"></i>
+                  <span>Order confirmation</span>
+                  <small class="!mt-2 !text-[0.75rem] opacity-75">Swipe for more</small>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="success-placeholder" style="min-height:180px;">
+                  <i class="uil uil-image-v before:content-['\eb53']"></i>
+                  <span>Payment receipt</span>
+                  <small class="!mt-2 !text-[0.75rem] opacity-75">Swipe for more</small>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="success-placeholder" style="min-height:180px;">
+                  <i class="uil uil-image-v before:content-['\eb53']"></i>
+                  <span>Email confirmation</span>
+                  <small class="!mt-2 !text-[0.75rem] opacity-75">Swipe for more</small>
+                </div>
+              </div>
+              </div>
+            </div>
+          </div>
+              <div class="img-swiper ">
+            <div class="swiper-container" data-items="1" data-dots="true" data-nav="false" data-margin="0" data-autoplay="false">
+              <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="success-placeholder" style="min-height:240px;">
+                  <i class="uil uil-image-v before:content-['\eb53']"></i>
+                  <span>Shipped notification</span>
+                  <small class="!mt-2 !text-[0.75rem] opacity-75">Swipe for more</small>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="success-placeholder" style="min-height:240px;">
+                  <i class="uil uil-image-v before:content-['\eb53']"></i>
+                  <span>Tracking page</span>
+                  <small class="!mt-2 !text-[0.75rem] opacity-75">Swipe for more</small>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="success-placeholder" style="min-height:240px;">
+                  <i class="uil uil-image-v before:content-['\eb53']"></i>
+                  <span>Out for delivery alert</span>
+                  <small class="!mt-2 !text-[0.75rem] opacity-75">Swipe for more</small>
+                </div>
+              </div>
+              </div>
+            </div>
+          </div>
+              <div class="img-swiper ">
+            <div class="swiper-container" data-items="1" data-dots="true" data-nav="false" data-margin="0" data-autoplay="false">
+              <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="success-placeholder" style="min-height:240px;">
+                  <i class="uil uil-image-v before:content-['\eb53']"></i>
+                  <span>Package at door</span>
+                  <small class="!mt-2 !text-[0.75rem] opacity-75">Swipe for more</small>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="success-placeholder" style="min-height:240px;">
+                  <i class="uil uil-image-v before:content-['\eb53']"></i>
+                  <span>Unboxing shot</span>
+                  <small class="!mt-2 !text-[0.75rem] opacity-75">Swipe for more</small>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="success-placeholder" style="min-height:240px;">
+                  <i class="uil uil-image-v before:content-['\eb53']"></i>
+                  <span>Product in hand</span>
+                  <small class="!mt-2 !text-[0.75rem] opacity-75">Swipe for more</small>
+                </div>
+              </div>
+              </div>
+            </div>
+          </div>
+              <div class="img-swiper ">
+            <div class="swiper-container" data-items="1" data-dots="true" data-nav="false" data-margin="0" data-autoplay="false">
+              <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="success-placeholder" style="min-height:180px;">
+                  <i class="uil uil-image-v before:content-['\eb53']"></i>
+                  <span>Full haul laid out</span>
+                  <small class="!mt-2 !text-[0.75rem] opacity-75">Swipe for more</small>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="success-placeholder" style="min-height:180px;">
+                  <i class="uil uil-image-v before:content-['\eb53']"></i>
+                  <span>Receipt total</span>
+                  <small class="!mt-2 !text-[0.75rem] opacity-75">Swipe for more</small>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="success-placeholder" style="min-height:180px;">
+                  <i class="uil uil-image-v before:content-['\eb53']"></i>
+                  <span>Product collection</span>
+                  <small class="!mt-2 !text-[0.75rem] opacity-75">Swipe for more</small>
+                </div>
+              </div>
+              </div>
+            </div>
+          </div>
             </div>
             <hr class="divider">
             <p class="!text-[#60697b] !leading-relaxed !mb-6 !text-[1.05rem]">Zara's merchandising team corrected the pricing by 10 AM, moving new arrivals to their intended price points. All orders at sale prices were fulfilled from the fresh inventory, shipping within Zara's standard 3-5 day window.</p>

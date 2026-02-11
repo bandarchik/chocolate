@@ -185,6 +185,20 @@
       opacity: 0.5;
     }
 
+    .img-swiper { position: relative; z-index: 1; padding-bottom: 8px; padding-right: 8px; }
+    .img-swiper::before, .img-swiper::after { content: ''; position: absolute; background: linear-gradient(135deg, #e8e8f0 0%, #dddde8 100%); border: 2px dashed #d0d0dc; border-radius: 12px; pointer-events: none; }
+    .img-swiper::before { top: 4px; left: 4px; right: -4px; bottom: -4px; z-index: -1; opacity: 0.7; }
+    .img-swiper::after { top: 8px; left: 8px; right: -8px; bottom: -8px; z-index: -2; opacity: 0.4; }
+    .img-swiper .swiper-container { border-radius: 12px; overflow: hidden; }
+    .img-swiper .swiper-slide .success-placeholder { min-height: 220px; margin: 0; border-radius: 12px; }
+    .img-swiper .swiper-pagination { position: relative !important; margin-top: 8px; }
+    .img-swiper .swiper-pagination-bullet { background: #959ca9; }
+    .img-swiper .swiper-pagination-bullet-active { background: #605dba; }
+    .img-swiper .swiper-controls { display: none; }
+    .img-swiper .success-placeholder img { width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; border-radius: 12px; }
+    .img-swiper .success-placeholder.has-img { padding: 0; position: relative; overflow: hidden; }
+    .img-swiper .success-placeholder.has-img span, .img-swiper .success-placeholder.has-img i, .img-swiper .success-placeholder.has-img small { display: none; }
+
     .highlight-box {
       background: linear-gradient(135deg, #fef3cd 0%, #fff8e1 100%);
       border-left: 4px solid #f7971e;
@@ -1026,11 +1040,15 @@
           <div class="col-lg-10 col-xl-8">
             <div class="card !rounded-[1rem] !shadow-lg !border-0 !p-6 md:!p-10 !mb-8">
 
-              <!-- Hero image placeholder -->
-              <div class="success-placeholder !mb-8" style="min-height: 200px;">
-                <i class="uil uil-image-v before:content-['\eb53']"></i>
-                <span>Hero Image: Home Depot Milwaukee Tools Glitch</span>
-                <small class="!mt-2 !text-[0.75rem] opacity-75">Replace with screenshot of the glitched listing</small>
+              <!-- Hero image swiper -->
+              <div class="img-swiper !mb-8">
+                <div class="swiper-container" data-items="1" data-dots="true" data-nav="false" data-margin="0" data-autoplay="false">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide"><div class="success-placeholder" style="min-height:200px;"><i class="uil uil-image-v before:content-['\eb53']"></i><span>Glitched listing screenshot</span><small class="!mt-2 !text-[0.75rem] opacity-75">Swipe for more</small></div></div>
+                    <div class="swiper-slide"><div class="success-placeholder" style="min-height:200px;"><i class="uil uil-image-v before:content-['\eb53']"></i><span>Price comparison view</span><small class="!mt-2 !text-[0.75rem] opacity-75">Swipe for more</small></div></div>
+                    <div class="swiper-slide"><div class="success-placeholder" style="min-height:200px;"><i class="uil uil-image-v before:content-['\eb53']"></i><span>Cart total screenshot</span><small class="!mt-2 !text-[0.75rem] opacity-75">Swipe for more</small></div></div>
+                  </div>
+                </div>
               </div>
 
               <!-- Stats row -->
@@ -1091,25 +1109,41 @@
               </p>
 
               <div class="success-grid !mb-8">
-                <div class="success-placeholder">
-                  <i class="uil uil-image-v before:content-['\eb53']"></i>
-                  <span>Member Success #1</span>
-                  <small class="!mt-2 !text-[0.75rem] opacity-75">Order confirmation screenshot</small>
+                <div class="img-swiper">
+                  <div class="swiper-container" data-items="1" data-dots="true" data-nav="false" data-margin="0" data-autoplay="false">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide"><div class="success-placeholder"><i class="uil uil-image-v before:content-['\eb53']"></i><span>Order confirmation #1</span><small class="!mt-2 !text-[0.75rem] opacity-75">Swipe for more</small></div></div>
+                      <div class="swiper-slide"><div class="success-placeholder"><i class="uil uil-image-v before:content-['\eb53']"></i><span>Order confirmation #2</span><small class="!mt-2 !text-[0.75rem] opacity-75">Swipe for more</small></div></div>
+                      <div class="swiper-slide"><div class="success-placeholder"><i class="uil uil-image-v before:content-['\eb53']"></i><span>Order confirmation #3</span><small class="!mt-2 !text-[0.75rem] opacity-75">Swipe for more</small></div></div>
+                    </div>
+                  </div>
                 </div>
-                <div class="success-placeholder">
-                  <i class="uil uil-image-v before:content-['\eb53']"></i>
-                  <span>Member Success #2</span>
-                  <small class="!mt-2 !text-[0.75rem] opacity-75">Shipping notification screenshot</small>
+                <div class="img-swiper">
+                  <div class="swiper-container" data-items="1" data-dots="true" data-nav="false" data-margin="0" data-autoplay="false">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide"><div class="success-placeholder"><i class="uil uil-image-v before:content-['\eb53']"></i><span>Shipping notification #1</span><small class="!mt-2 !text-[0.75rem] opacity-75">Swipe for more</small></div></div>
+                      <div class="swiper-slide"><div class="success-placeholder"><i class="uil uil-image-v before:content-['\eb53']"></i><span>Shipping notification #2</span><small class="!mt-2 !text-[0.75rem] opacity-75">Swipe for more</small></div></div>
+                      <div class="swiper-slide"><div class="success-placeholder"><i class="uil uil-image-v before:content-['\eb53']"></i><span>Tracking screenshot</span><small class="!mt-2 !text-[0.75rem] opacity-75">Swipe for more</small></div></div>
+                    </div>
+                  </div>
                 </div>
-                <div class="success-placeholder">
-                  <i class="uil uil-image-v before:content-['\eb53']"></i>
-                  <span>Member Success #3</span>
-                  <small class="!mt-2 !text-[0.75rem] opacity-75">Delivery photo</small>
+                <div class="img-swiper">
+                  <div class="swiper-container" data-items="1" data-dots="true" data-nav="false" data-margin="0" data-autoplay="false">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide"><div class="success-placeholder"><i class="uil uil-image-v before:content-['\eb53']"></i><span>Delivery photo #1</span><small class="!mt-2 !text-[0.75rem] opacity-75">Swipe for more</small></div></div>
+                      <div class="swiper-slide"><div class="success-placeholder"><i class="uil uil-image-v before:content-['\eb53']"></i><span>Delivery photo #2</span><small class="!mt-2 !text-[0.75rem] opacity-75">Swipe for more</small></div></div>
+                      <div class="swiper-slide"><div class="success-placeholder"><i class="uil uil-image-v before:content-['\eb53']"></i><span>Delivery photo #3</span><small class="!mt-2 !text-[0.75rem] opacity-75">Swipe for more</small></div></div>
+                    </div>
+                  </div>
                 </div>
-                <div class="success-placeholder">
-                  <i class="uil uil-image-v before:content-['\eb53']"></i>
-                  <span>Member Success #4</span>
-                  <small class="!mt-2 !text-[0.75rem] opacity-75">Unboxing / haul photo</small>
+                <div class="img-swiper">
+                  <div class="swiper-container" data-items="1" data-dots="true" data-nav="false" data-margin="0" data-autoplay="false">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide"><div class="success-placeholder"><i class="uil uil-image-v before:content-['\eb53']"></i><span>Unboxing haul #1</span><small class="!mt-2 !text-[0.75rem] opacity-75">Swipe for more</small></div></div>
+                      <div class="swiper-slide"><div class="success-placeholder"><i class="uil uil-image-v before:content-['\eb53']"></i><span>Unboxing haul #2</span><small class="!mt-2 !text-[0.75rem] opacity-75">Swipe for more</small></div></div>
+                      <div class="swiper-slide"><div class="success-placeholder"><i class="uil uil-image-v before:content-['\eb53']"></i><span>Full haul spread</span><small class="!mt-2 !text-[0.75rem] opacity-75">Swipe for more</small></div></div>
+                    </div>
+                  </div>
                 </div>
               </div>
 
@@ -1121,15 +1155,23 @@
 
               <!-- More success images -->
               <div class="success-grid !mb-8">
-                <div class="success-placeholder">
-                  <i class="uil uil-image-v before:content-['\eb53']"></i>
-                  <span>Member Success #5</span>
-                  <small class="!mt-2 !text-[0.75rem] opacity-75">Full haul laid out</small>
+                <div class="img-swiper">
+                  <div class="swiper-container" data-items="1" data-dots="true" data-nav="false" data-margin="0" data-autoplay="false">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide"><div class="success-placeholder"><i class="uil uil-image-v before:content-['\eb53']"></i><span>Full haul laid out #1</span><small class="!mt-2 !text-[0.75rem] opacity-75">Swipe for more</small></div></div>
+                      <div class="swiper-slide"><div class="success-placeholder"><i class="uil uil-image-v before:content-['\eb53']"></i><span>Full haul laid out #2</span><small class="!mt-2 !text-[0.75rem] opacity-75">Swipe for more</small></div></div>
+                      <div class="swiper-slide"><div class="success-placeholder"><i class="uil uil-image-v before:content-['\eb53']"></i><span>Full haul laid out #3</span><small class="!mt-2 !text-[0.75rem] opacity-75">Swipe for more</small></div></div>
+                    </div>
+                  </div>
                 </div>
-                <div class="success-placeholder">
-                  <i class="uil uil-image-v before:content-['\eb53']"></i>
-                  <span>Member Success #6</span>
-                  <small class="!mt-2 !text-[0.75rem] opacity-75">Receipt / order total</small>
+                <div class="img-swiper">
+                  <div class="swiper-container" data-items="1" data-dots="true" data-nav="false" data-margin="0" data-autoplay="false">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide"><div class="success-placeholder"><i class="uil uil-image-v before:content-['\eb53']"></i><span>Receipt / order total</span><small class="!mt-2 !text-[0.75rem] opacity-75">Swipe for more</small></div></div>
+                      <div class="swiper-slide"><div class="success-placeholder"><i class="uil uil-image-v before:content-['\eb53']"></i><span>Payment confirmation</span><small class="!mt-2 !text-[0.75rem] opacity-75">Swipe for more</small></div></div>
+                      <div class="swiper-slide"><div class="success-placeholder"><i class="uil uil-image-v before:content-['\eb53']"></i><span>Savings breakdown</span><small class="!mt-2 !text-[0.75rem] opacity-75">Swipe for more</small></div></div>
+                    </div>
+                  </div>
                 </div>
               </div>
 
